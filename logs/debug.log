@@ -725,3 +725,11 @@ KeyError: 'is_created'
 2024-04-24 13:20:28,516 WARNING runserver 8 125132882290368 HTTP GET /favicon.ico 404 [0.01, 172.23.0.1:44586]
 2024-04-24 13:21:25,234 INFO runserver 8 125132882290368 WebSocket DISCONNECT /ws/ [172.23.0.1:42156]
 2024-04-24 13:26:09,517 INFO runserver 8 125132882290368 WebSocket DISCONNECT /ws/ [172.23.0.1:43814]
+2024-04-24 16:06:22,725 INFO autoreload 18644 130238160777216 Watching for file changes with StatReloader
+2024-04-24 16:06:22,774 INFO server 18644 130238100674112 HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+2024-04-24 16:06:22,775 INFO server 18644 130238100674112 Configuring endpoint tcp:port=5011:interface=0.0.0.0
+2024-04-24 16:06:22,776 INFO server 18644 130238100674112 Listening on TCP address 0.0.0.0:5011
+2024-04-24 16:06:46,699 INFO autoreload 18729 128426907049984 Watching for file changes with StatReloader
+2024-04-24 16:06:46,731 INFO server 18729 128426846930496 HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+2024-04-24 16:06:46,731 INFO server 18729 128426846930496 Configuring endpoint tcp:port=5011:interface=0.0.0.0
+2024-04-24 16:06:46,732 INFO server 18729 128426846930496 Listening on TCP address 0.0.0.0:5011
