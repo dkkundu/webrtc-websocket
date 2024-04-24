@@ -4,11 +4,8 @@ services:
   live_streaming:
     build: .
     command: >
-      sh -c 'python manage.py runserver 0.0.0.0:8008'
+      sh -c 'daphne -b 0.0.0.0:8008 LiveStreaming.asgi:application'
     restart: always
-    volumes:
-      - ./logs:/app/logs
-      - ./media:/app/media
     ports:
       - "5011:8008"
 
