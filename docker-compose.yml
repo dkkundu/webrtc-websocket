@@ -1,11 +1,13 @@
 version: '3.10'
 
 services:
-  live_streaming:
-    build: .
-    command: >
-      sh -c 'daphne -b 0.0.0.0:8008 LiveStreaming.asgi:application'
-    restart: always
+  django:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: daphne -b 0.0.0.0 -p 8000 LiveStreaming.asgi:application
     ports:
-      - "5011:8008"
-
+      - "5011:8000"
+    environment:
+      - DJANGO_SETTINGS_MODULE=LiveStreaming.settings
+      # Add other Django environment variables if necessary
