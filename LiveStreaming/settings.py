@@ -45,7 +45,8 @@ ALLOWED_HOSTS = [
     'localhost',
     '*',
     '192.168.68.176:9000',
-    'mfr-live.sslwireless.com'
+    'mfr-live.sslwireless.com',
+    'localhost:5011'
     # add project domain here
 ]
 # HTTPS configuration
