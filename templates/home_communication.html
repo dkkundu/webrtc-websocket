@@ -55,7 +55,7 @@
      const room_id = "{{ room_id }}";
      let is_created;
 
-     const ws = new WebSocket("ws://localhost:9000/ws/")
+     const ws = new WebSocket("ws://mfr-live.sslwireless.com/ws/")
      ws.onopen = () =>{
          console.log("WebSocket Connection opened")
           ws.send(JSON.stringify({

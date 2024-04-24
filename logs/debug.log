@@ -646,3 +646,20 @@ KeyError: 'is_created'
 2024-04-24 09:33:55,371 INFO runserver 305302 135460071089728 WebSocket DISCONNECT /ws/ [127.0.0.1:35072]
 2024-04-24 09:33:55,537 INFO runserver 305302 135460071089728 WebSocket HANDSHAKING /ws/ [127.0.0.1:55192]
 2024-04-24 09:33:55,539 INFO runserver 305302 135460071089728 WebSocket CONNECT /ws/ [127.0.0.1:55192]
+2024-04-24 12:45:25,498 INFO autoreload 9 132108533959552 Watching for file changes with StatReloader
+2024-04-24 12:45:25,572 INFO server 9 132108480046784 HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+2024-04-24 12:45:25,572 INFO server 9 132108480046784 Configuring endpoint tcp:port=8000:interface=0.0.0.0
+2024-04-24 12:45:25,573 INFO server 9 132108480046784 Listening on TCP address 0.0.0.0:8000
+2024-04-24 12:51:06,562 INFO autoreload 8 128937827543936 Watching for file changes with StatReloader
+2024-04-24 12:51:06,661 INFO server 8 128937773631168 HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+2024-04-24 12:51:06,662 INFO server 8 128937773631168 Configuring endpoint tcp:port=8008:interface=0.0.0.0
+2024-04-24 12:51:06,663 INFO server 8 128937773631168 Listening on TCP address 0.0.0.0:8008
+2024-04-24 12:53:45,262 INFO autoreload 8 134090189548416 Watching for file changes with StatReloader
+2024-04-24 12:53:45,338 INFO server 8 134090135635648 HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+2024-04-24 12:53:45,339 INFO server 8 134090135635648 Configuring endpoint tcp:port=8008:interface=0.0.0.0
+2024-04-24 12:53:45,339 INFO server 8 134090135635648 Listening on TCP address 0.0.0.0:8008
+2024-04-24 12:53:45,576 INFO runserver 8 134090135635648 HTTP GET / 200 [0.01, 172.21.0.1:56856]
+2024-04-24 12:53:45,995 WARNING log 8 134090116753088 Not Found: /favicon.ico
+2024-04-24 12:53:45,996 WARNING runserver 8 134090135635648 HTTP GET /favicon.ico 404 [0.02, 172.21.0.1:56856]
+2024-04-24 12:53:50,085 INFO runserver 8 134090135635648 HTTP POST / 302 [0.06, 172.21.0.1:56856]
+2024-04-24 12:53:50,123 INFO runserver 8 134090135635648 HTTP GET /communication/1/join/ 200 [0.03, 172.21.0.1:56856]
