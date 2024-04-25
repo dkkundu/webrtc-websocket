@@ -1,8 +1,7 @@
 version: '3.10'
 
 services:
-<<<<<<< HEAD
-  web:
+  web_live:
     build: .
     command: daphne -b 0.0.0.0 -p 8000 LiveStreaming.asgi:application
     volumes:
@@ -19,15 +18,3 @@ services:
     image: "redis:latest"
     ports:
       - "6379:6379"
-=======
-  django:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    command: daphne -b 0.0.0.0 -p 8000 LiveStreaming.asgi:application
-    ports:
-      - "5011:8000"
-    environment:
-      - DJANGO_SETTINGS_MODULE=LiveStreaming.settings
-      # Add other Django environment variables if necessary
->>>>>>> cd5bf0daea94518b1e0266cae0693168c4e55ebb
