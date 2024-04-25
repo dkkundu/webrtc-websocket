@@ -2,3 +2,7 @@
 2024-04-25 03:01:54,816 INFO server 9 133720857216704 HTTP/2 support not enabled (install the http2 and tls Twisted extras)
 2024-04-25 03:01:54,816 INFO server 9 133720857216704 Configuring endpoint tcp:port=8008:interface=0.0.0.0
 2024-04-25 03:01:54,818 INFO server 9 133720857216704 Listening on TCP address 0.0.0.0:8008
+2024-04-25 05:16:03,936 INFO cli 1 135931985378176 Starting server at tcp:port=8000:interface=0.0.0.0
+2024-04-25 05:16:03,937 INFO server 1 135931985378176 HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+2024-04-25 05:16:03,937 INFO server 1 135931985378176 Configuring endpoint tcp:port=8000:interface=0.0.0.0
+2024-04-25 05:16:03,938 INFO server 1 135931985378176 Listening on TCP address 0.0.0.0:8000

@@ -13,8 +13,10 @@ COPY . /app
 COPY ./requirements.txt /app/requirements.txt
 
 #RUN apk add postgresql-dev gcc musl-dev
-RUN apt-get update && apt-get install ffmpeg libsm6 libxext6  -y
+# Install system dependencies
+RUN apt-get update
 RUN pip install --upgrade pip setuptools wheel
 RUN pip install -r requirements.txt
 RUN python manage.py collectstatic --noinput
-
+# Run the application
+CMD ["daphne", "-b", "0.0.0.0", "-p", "8000", "LiveStreaming.asgi:application"]

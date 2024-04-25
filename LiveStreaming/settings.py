@@ -50,11 +50,10 @@ ALLOWED_HOSTS = [
     # add project domain here
 ]
 # HTTPS configuration
-if ENABLE_HTTPS:  # local_settings
-    USE_X_FORWARDED_HOST = True
-    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-    SESSION_COOKIE_SECURE = True
-    CSRF_COOKIE_SECURE = True
+USE_X_FORWARDED_HOST = True
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https', 'wss')
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
 
 # CORS HEADERS
 CORS_ALLOWED_ORIGINS = CORS_ALLOWED_ORIGINS
@@ -119,11 +118,13 @@ WSGI_APPLICATION = 'LiveStreaming.wsgi.application'
 # }
 
 CHANNEL_LAYERS = {
-    'default': {
-        'BACKEND': 'channels.layers.InMemoryChannelLayer',
+    "default": {
+        "BACKEND": "channels_redis.core.RedisChannelLayer",
+        "CONFIG": {
+            "hosts": [("redis", 6379)],
+        },
     },
 }
-
 
 
 # Database
