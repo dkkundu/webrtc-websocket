@@ -109,12 +109,11 @@ ASGI_APPLICATION = 'LiveStreaming.asgi.application'
 WSGI_APPLICATION = 'LiveStreaming.wsgi.application'
 
 
-
 CHANNEL_LAYERS = {
     'default': {
         'BACKEND': 'channels_redis.core.RedisChannelLayer',
         'CONFIG': {
-            "hosts": [('localhost', 6379)],
+            "hosts": [('192.168.68.176', 6379)],
         },
     },
 }

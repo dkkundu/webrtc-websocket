@@ -1965,3 +1965,148 @@ django.core.exceptions.ImproperlyConfigured: The SECURE_PROXY_SSL_HEADER setting
 2024-04-25 07:01:14,077 INFO runserver 6840 123135020705344 WebSocket HANDSHAKING /ws/ [127.0.0.1:44416]
 2024-04-25 07:01:14,082 INFO runserver 6840 123135020705344 WebSocket CONNECT /ws/ [127.0.0.1:44416]
 2024-04-25 07:01:17,853 INFO runserver 6840 123135020705344 WebSocket DISCONNECT /ws/ [127.0.0.1:42466]
+2024-04-25 09:32:57,394 INFO cli 1 133588228860800 Starting server at tcp:port=8000:interface=0.0.0.0
+2024-04-25 09:32:57,394 INFO server 1 133588228860800 HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+2024-04-25 09:32:57,394 INFO server 1 133588228860800 Configuring endpoint tcp:port=8000:interface=0.0.0.0
+2024-04-25 09:32:57,395 INFO server 1 133588228860800 Listening on TCP address 0.0.0.0:8000
+2024-04-25 09:36:56,825 WARNING log 1 133588165342912 Not Found: /favicon.ico
+2024-04-25 09:37:11,694 ERROR server 1 133588228860800 Exception inside application: Cannot import BACKEND 'channels_redis.core.RedisChannelLayer' specified for default
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/channels/layers.py", line 65, in _make_backend
+    backend_class = import_string(self.configs[name]["BACKEND"])
+  File "/usr/local/lib/python3.10/site-packages/django/utils/module_loading.py", line 30, in import_string
+    return cached_import(module_path, class_name)
+  File "/usr/local/lib/python3.10/site-packages/django/utils/module_loading.py", line 15, in cached_import
+    module = import_module(module_path)
+  File "/usr/local/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 992, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1004, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'channels_redis'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/channels/routing.py", line 71, in __call__
+    return await application(scope, receive, send)
+  File "/usr/local/lib/python3.10/site-packages/channels/sessions.py", line 47, in __call__
+    return await self.inner(dict(scope, cookies=cookies), receive, send)
+  File "/usr/local/lib/python3.10/site-packages/channels/sessions.py", line 263, in __call__
+    return await self.inner(wrapper.scope, receive, wrapper.send)
+  File "/usr/local/lib/python3.10/site-packages/channels/auth.py", line 185, in __call__
+    return await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.10/site-packages/channels/middleware.py", line 26, in __call__
+    return await self.inner(scope, receive, send)
+  File "/usr/local/lib/python3.10/site-packages/channels/routing.py", line 150, in __call__
+    return await application(
+  File "/usr/local/lib/python3.10/site-packages/channels/consumer.py", line 94, in app
+    return await consumer(scope, receive, send)
+  File "/usr/local/lib/python3.10/site-packages/channels/consumer.py", line 44, in __call__
+    self.channel_layer = get_channel_layer(self.channel_layer_alias)
+  File "/usr/local/lib/python3.10/site-packages/channels/layers.py", line 359, in get_channel_layer
+    return channel_layers[alias]
+  File "/usr/local/lib/python3.10/site-packages/channels/layers.py", line 78, in __getitem__
+    self.backends[key] = self.make_backend(key)
+  File "/usr/local/lib/python3.10/site-packages/channels/layers.py", line 44, in make_backend
+    return self._make_backend(name, config)
+  File "/usr/local/lib/python3.10/site-packages/channels/layers.py", line 69, in _make_backend
+    raise InvalidChannelLayerError(
+channels.exceptions.InvalidChannelLayerError: Cannot import BACKEND 'channels_redis.core.RedisChannelLayer' specified for default
+2024-04-25 09:53:07,427 INFO server 1 133588228860800 Killed 0 pending application instances
+2024-04-25 09:54:35,243 INFO cli 1 124812129323904 Starting server at tcp:port=8000:interface=0.0.0.0
+2024-04-25 09:54:35,243 INFO server 1 124812129323904 HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+2024-04-25 09:54:35,243 INFO server 1 124812129323904 Configuring endpoint tcp:port=8000:interface=0.0.0.0
+2024-04-25 09:54:35,244 INFO server 1 124812129323904 Listening on TCP address 0.0.0.0:8000
+2024-04-25 09:55:47,995 WARNING log 1 124812061505216 Not Found: /favicon.ico
+2024-04-25 09:55:48,334 ERROR server 1 124812129323904 Exception inside application: Error connecting to localhost:6379. Multiple exceptions: [Errno 111] Connect call failed ('::1', 6379, 0, 0), [Errno 111] Connect call failed ('127.0.0.1', 6379).
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/redis/asyncio/connection.py", line 274, in connect
+    await self.retry.call_with_retry(
+  File "/usr/local/lib/python3.10/site-packages/redis/asyncio/retry.py", line 59, in call_with_retry
+    return await do()
+  File "/usr/local/lib/python3.10/site-packages/redis/asyncio/connection.py", line 681, in _connect
+    reader, writer = await asyncio.open_connection(
+  File "/usr/local/lib/python3.10/asyncio/streams.py", line 48, in open_connection
+    transport, _ = await loop.create_connection(
+  File "/usr/local/lib/python3.10/asyncio/base_events.py", line 1084, in create_connection
+    raise OSError('Multiple exceptions: {}'.format(
+OSError: Multiple exceptions: [Errno 111] Connect call failed ('::1', 6379, 0, 0), [Errno 111] Connect call failed ('127.0.0.1', 6379)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/channels/routing.py", line 71, in __call__
+    return await application(scope, receive, send)
+  File "/usr/local/lib/python3.10/site-packages/channels/sessions.py", line 47, in __call__
+    return await self.inner(dict(scope, cookies=cookies), receive, send)
+  File "/usr/local/lib/python3.10/site-packages/channels/sessions.py", line 263, in __call__
+    return await self.inner(wrapper.scope, receive, wrapper.send)
+  File "/usr/local/lib/python3.10/site-packages/channels/auth.py", line 185, in __call__
+    return await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.10/site-packages/channels/middleware.py", line 26, in __call__
+    return await self.inner(scope, receive, send)
+  File "/usr/local/lib/python3.10/site-packages/channels/routing.py", line 150, in __call__
+    return await application(
+  File "/usr/local/lib/python3.10/site-packages/channels/consumer.py", line 94, in app
+    return await consumer(scope, receive, send)
+  File "/usr/local/lib/python3.10/site-packages/channels/consumer.py", line 58, in __call__
+    await await_many_dispatch(
+  File "/usr/local/lib/python3.10/site-packages/channels/utils.py", line 58, in await_many_dispatch
+    await task
+redis.exceptions.ConnectionError: Error connecting to localhost:6379. Multiple exceptions: [Errno 111] Connect call failed ('::1', 6379, 0, 0), [Errno 111] Connect call failed ('127.0.0.1', 6379).
+2024-04-25 09:57:51,749 INFO server 1 124812129323904 Killed 0 pending application instances
+2024-04-25 09:59:02,146 INFO cli 1 137249324780416 Starting server at tcp:port=8000:interface=0.0.0.0
+2024-04-25 09:59:02,146 INFO server 1 137249324780416 HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+2024-04-25 09:59:02,146 INFO server 1 137249324780416 Configuring endpoint tcp:port=8000:interface=0.0.0.0
+2024-04-25 09:59:02,147 INFO server 1 137249324780416 Listening on TCP address 0.0.0.0:8000
+2024-04-25 09:59:13,071 WARNING log 1 137249247520448 Not Found: /favicon.ico
+2024-04-25 09:59:13,164 ERROR server 1 137249324780416 Exception inside application: Error 111 connecting to 192.168.68.176:6379. 111.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/redis/asyncio/connection.py", line 274, in connect
+    await self.retry.call_with_retry(
+  File "/usr/local/lib/python3.10/site-packages/redis/asyncio/retry.py", line 59, in call_with_retry
+    return await do()
+  File "/usr/local/lib/python3.10/site-packages/redis/asyncio/connection.py", line 681, in _connect
+    reader, writer = await asyncio.open_connection(
+  File "/usr/local/lib/python3.10/asyncio/streams.py", line 48, in open_connection
+    transport, _ = await loop.create_connection(
+  File "/usr/local/lib/python3.10/asyncio/base_events.py", line 1076, in create_connection
+    raise exceptions[0]
+  File "/usr/local/lib/python3.10/asyncio/base_events.py", line 1060, in create_connection
+    sock = await self._connect_sock(
+  File "/usr/local/lib/python3.10/asyncio/base_events.py", line 969, in _connect_sock
+    await self.sock_connect(sock, address)
+  File "/usr/local/lib/python3.10/asyncio/selector_events.py", line 501, in sock_connect
+    return await fut
+  File "/usr/local/lib/python3.10/asyncio/selector_events.py", line 541, in _sock_connect_cb
+    raise OSError(err, f'Connect call failed {address}')
+ConnectionRefusedError: [Errno 111] Connect call failed ('192.168.68.176', 6379)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/channels/routing.py", line 71, in __call__
+    return await application(scope, receive, send)
+  File "/usr/local/lib/python3.10/site-packages/channels/sessions.py", line 47, in __call__
+    return await self.inner(dict(scope, cookies=cookies), receive, send)
+  File "/usr/local/lib/python3.10/site-packages/channels/sessions.py", line 263, in __call__
+    return await self.inner(wrapper.scope, receive, wrapper.send)
+  File "/usr/local/lib/python3.10/site-packages/channels/auth.py", line 185, in __call__
+    return await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.10/site-packages/channels/middleware.py", line 26, in __call__
+    return await self.inner(scope, receive, send)
+  File "/usr/local/lib/python3.10/site-packages/channels/routing.py", line 150, in __call__
+    return await application(
+  File "/usr/local/lib/python3.10/site-packages/channels/consumer.py", line 94, in app
+    return await consumer(scope, receive, send)
+  File "/usr/local/lib/python3.10/site-packages/channels/consumer.py", line 58, in __call__
+    await await_many_dispatch(
+  File "/usr/local/lib/python3.10/site-packages/channels/utils.py", line 58, in await_many_dispatch
+    await task
+redis.exceptions.ConnectionError: Error 111 connecting to 192.168.68.176:6379. 111.
+2024-04-25 09:59:56,753 WARNING log 1 137249247520448 Not Found: /favicon.ico
