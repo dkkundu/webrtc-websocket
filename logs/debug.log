@@ -2110,3 +2110,278 @@ Traceback (most recent call last):
     await task
 redis.exceptions.ConnectionError: Error 111 connecting to 192.168.68.176:6379. 111.
 2024-04-25 09:59:56,753 WARNING log 1 137249247520448 Not Found: /favicon.ico
+2024-04-25 10:17:12,389 INFO server 1 137249324780416 Killed 0 pending application instances
+2024-04-25 10:21:56,142 INFO cli 1 139341901409152 Starting server at tcp:port=8000:interface=0.0.0.0
+2024-04-25 10:21:56,143 INFO server 1 139341901409152 HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+2024-04-25 10:21:56,143 INFO server 1 139341901409152 Configuring endpoint tcp:port=8000:interface=0.0.0.0
+2024-04-25 10:21:56,144 INFO server 1 139341901409152 Listening on TCP address 0.0.0.0:8000
+2024-04-25 10:23:12,123 WARNING log 1 139341758199488 Not Found: /favicon.ico
+2024-04-25 10:23:12,223 ERROR server 1 139341901409152 Exception inside application: Error 111 connecting to 192.168.68.176:6379. 111.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/redis/asyncio/connection.py", line 274, in connect
+    await self.retry.call_with_retry(
+  File "/usr/local/lib/python3.10/site-packages/redis/asyncio/retry.py", line 59, in call_with_retry
+    return await do()
+  File "/usr/local/lib/python3.10/site-packages/redis/asyncio/connection.py", line 681, in _connect
+    reader, writer = await asyncio.open_connection(
+  File "/usr/local/lib/python3.10/asyncio/streams.py", line 48, in open_connection
+    transport, _ = await loop.create_connection(
+  File "/usr/local/lib/python3.10/asyncio/base_events.py", line 1076, in create_connection
+    raise exceptions[0]
+  File "/usr/local/lib/python3.10/asyncio/base_events.py", line 1060, in create_connection
+    sock = await self._connect_sock(
+  File "/usr/local/lib/python3.10/asyncio/base_events.py", line 969, in _connect_sock
+    await self.sock_connect(sock, address)
+  File "/usr/local/lib/python3.10/asyncio/selector_events.py", line 501, in sock_connect
+    return await fut
+  File "/usr/local/lib/python3.10/asyncio/selector_events.py", line 541, in _sock_connect_cb
+    raise OSError(err, f'Connect call failed {address}')
+ConnectionRefusedError: [Errno 111] Connect call failed ('192.168.68.176', 6379)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/channels/routing.py", line 71, in __call__
+    return await application(scope, receive, send)
+  File "/usr/local/lib/python3.10/site-packages/channels/sessions.py", line 47, in __call__
+    return await self.inner(dict(scope, cookies=cookies), receive, send)
+  File "/usr/local/lib/python3.10/site-packages/channels/sessions.py", line 263, in __call__
+    return await self.inner(wrapper.scope, receive, wrapper.send)
+  File "/usr/local/lib/python3.10/site-packages/channels/auth.py", line 185, in __call__
+    return await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.10/site-packages/channels/middleware.py", line 26, in __call__
+    return await self.inner(scope, receive, send)
+  File "/usr/local/lib/python3.10/site-packages/channels/routing.py", line 150, in __call__
+    return await application(
+  File "/usr/local/lib/python3.10/site-packages/channels/consumer.py", line 94, in app
+    return await consumer(scope, receive, send)
+  File "/usr/local/lib/python3.10/site-packages/channels/consumer.py", line 58, in __call__
+    await await_many_dispatch(
+  File "/usr/local/lib/python3.10/site-packages/channels/utils.py", line 58, in await_many_dispatch
+    await task
+redis.exceptions.ConnectionError: Error 111 connecting to 192.168.68.176:6379. 111.
+2024-04-25 10:48:49,566 WARNING log 1 139341758199488 Not Found: /favicon.ico
+2024-04-25 10:48:49,848 ERROR server 1 139341901409152 Exception inside application: Error 111 connecting to 192.168.68.176:6379. 111.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/redis/asyncio/connection.py", line 274, in connect
+    await self.retry.call_with_retry(
+  File "/usr/local/lib/python3.10/site-packages/redis/asyncio/retry.py", line 59, in call_with_retry
+    return await do()
+  File "/usr/local/lib/python3.10/site-packages/redis/asyncio/connection.py", line 681, in _connect
+    reader, writer = await asyncio.open_connection(
+  File "/usr/local/lib/python3.10/asyncio/streams.py", line 48, in open_connection
+    transport, _ = await loop.create_connection(
+  File "/usr/local/lib/python3.10/asyncio/base_events.py", line 1076, in create_connection
+    raise exceptions[0]
+  File "/usr/local/lib/python3.10/asyncio/base_events.py", line 1060, in create_connection
+    sock = await self._connect_sock(
+  File "/usr/local/lib/python3.10/asyncio/base_events.py", line 969, in _connect_sock
+    await self.sock_connect(sock, address)
+  File "/usr/local/lib/python3.10/asyncio/selector_events.py", line 501, in sock_connect
+    return await fut
+  File "/usr/local/lib/python3.10/asyncio/selector_events.py", line 541, in _sock_connect_cb
+    raise OSError(err, f'Connect call failed {address}')
+ConnectionRefusedError: [Errno 111] Connect call failed ('192.168.68.176', 6379)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/channels/routing.py", line 71, in __call__
+    return await application(scope, receive, send)
+  File "/usr/local/lib/python3.10/site-packages/channels/sessions.py", line 47, in __call__
+    return await self.inner(dict(scope, cookies=cookies), receive, send)
+  File "/usr/local/lib/python3.10/site-packages/channels/sessions.py", line 263, in __call__
+    return await self.inner(wrapper.scope, receive, wrapper.send)
+  File "/usr/local/lib/python3.10/site-packages/channels/auth.py", line 185, in __call__
+    return await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.10/site-packages/channels/middleware.py", line 26, in __call__
+    return await self.inner(scope, receive, send)
+  File "/usr/local/lib/python3.10/site-packages/channels/routing.py", line 150, in __call__
+    return await application(
+  File "/usr/local/lib/python3.10/site-packages/channels/consumer.py", line 94, in app
+    return await consumer(scope, receive, send)
+  File "/usr/local/lib/python3.10/site-packages/channels/consumer.py", line 58, in __call__
+    await await_many_dispatch(
+  File "/usr/local/lib/python3.10/site-packages/channels/utils.py", line 58, in await_many_dispatch
+    await task
+redis.exceptions.ConnectionError: Error 111 connecting to 192.168.68.176:6379. 111.
+2024-04-25 10:49:27,349 WARNING log 1 139341758199488 Not Found: /favicon.ico
+2024-04-25 10:49:27,889 ERROR server 1 139341901409152 Exception inside application: Error 111 connecting to 192.168.68.176:6379. 111.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/redis/asyncio/connection.py", line 274, in connect
+    await self.retry.call_with_retry(
+  File "/usr/local/lib/python3.10/site-packages/redis/asyncio/retry.py", line 59, in call_with_retry
+    return await do()
+  File "/usr/local/lib/python3.10/site-packages/redis/asyncio/connection.py", line 681, in _connect
+    reader, writer = await asyncio.open_connection(
+  File "/usr/local/lib/python3.10/asyncio/streams.py", line 48, in open_connection
+    transport, _ = await loop.create_connection(
+  File "/usr/local/lib/python3.10/asyncio/base_events.py", line 1076, in create_connection
+    raise exceptions[0]
+  File "/usr/local/lib/python3.10/asyncio/base_events.py", line 1060, in create_connection
+    sock = await self._connect_sock(
+  File "/usr/local/lib/python3.10/asyncio/base_events.py", line 969, in _connect_sock
+    await self.sock_connect(sock, address)
+  File "/usr/local/lib/python3.10/asyncio/selector_events.py", line 501, in sock_connect
+    return await fut
+  File "/usr/local/lib/python3.10/asyncio/selector_events.py", line 541, in _sock_connect_cb
+    raise OSError(err, f'Connect call failed {address}')
+ConnectionRefusedError: [Errno 111] Connect call failed ('192.168.68.176', 6379)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/channels/routing.py", line 71, in __call__
+    return await application(scope, receive, send)
+  File "/usr/local/lib/python3.10/site-packages/channels/sessions.py", line 47, in __call__
+    return await self.inner(dict(scope, cookies=cookies), receive, send)
+  File "/usr/local/lib/python3.10/site-packages/channels/sessions.py", line 263, in __call__
+    return await self.inner(wrapper.scope, receive, wrapper.send)
+  File "/usr/local/lib/python3.10/site-packages/channels/auth.py", line 185, in __call__
+    return await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.10/site-packages/channels/middleware.py", line 26, in __call__
+    return await self.inner(scope, receive, send)
+  File "/usr/local/lib/python3.10/site-packages/channels/routing.py", line 150, in __call__
+    return await application(
+  File "/usr/local/lib/python3.10/site-packages/channels/consumer.py", line 94, in app
+    return await consumer(scope, receive, send)
+  File "/usr/local/lib/python3.10/site-packages/channels/consumer.py", line 58, in __call__
+    await await_many_dispatch(
+  File "/usr/local/lib/python3.10/site-packages/channels/utils.py", line 58, in await_many_dispatch
+    await task
+redis.exceptions.ConnectionError: Error 111 connecting to 192.168.68.176:6379. 111.
+2024-04-25 10:50:35,573 WARNING log 1 139341758199488 Not Found: /favicon.ico
+2024-04-25 10:50:35,957 ERROR server 1 139341901409152 Exception inside application: Error 111 connecting to 192.168.68.176:6379. 111.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/redis/asyncio/connection.py", line 274, in connect
+    await self.retry.call_with_retry(
+  File "/usr/local/lib/python3.10/site-packages/redis/asyncio/retry.py", line 59, in call_with_retry
+    return await do()
+  File "/usr/local/lib/python3.10/site-packages/redis/asyncio/connection.py", line 681, in _connect
+    reader, writer = await asyncio.open_connection(
+  File "/usr/local/lib/python3.10/asyncio/streams.py", line 48, in open_connection
+    transport, _ = await loop.create_connection(
+  File "/usr/local/lib/python3.10/asyncio/base_events.py", line 1076, in create_connection
+    raise exceptions[0]
+  File "/usr/local/lib/python3.10/asyncio/base_events.py", line 1060, in create_connection
+    sock = await self._connect_sock(
+  File "/usr/local/lib/python3.10/asyncio/base_events.py", line 969, in _connect_sock
+    await self.sock_connect(sock, address)
+  File "/usr/local/lib/python3.10/asyncio/selector_events.py", line 501, in sock_connect
+    return await fut
+  File "/usr/local/lib/python3.10/asyncio/selector_events.py", line 541, in _sock_connect_cb
+    raise OSError(err, f'Connect call failed {address}')
+ConnectionRefusedError: [Errno 111] Connect call failed ('192.168.68.176', 6379)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/channels/routing.py", line 71, in __call__
+    return await application(scope, receive, send)
+  File "/usr/local/lib/python3.10/site-packages/channels/sessions.py", line 47, in __call__
+    return await self.inner(dict(scope, cookies=cookies), receive, send)
+  File "/usr/local/lib/python3.10/site-packages/channels/sessions.py", line 263, in __call__
+    return await self.inner(wrapper.scope, receive, wrapper.send)
+  File "/usr/local/lib/python3.10/site-packages/channels/auth.py", line 185, in __call__
+    return await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.10/site-packages/channels/middleware.py", line 26, in __call__
+    return await self.inner(scope, receive, send)
+  File "/usr/local/lib/python3.10/site-packages/channels/routing.py", line 150, in __call__
+    return await application(
+  File "/usr/local/lib/python3.10/site-packages/channels/consumer.py", line 94, in app
+    return await consumer(scope, receive, send)
+  File "/usr/local/lib/python3.10/site-packages/channels/consumer.py", line 58, in __call__
+    await await_many_dispatch(
+  File "/usr/local/lib/python3.10/site-packages/channels/utils.py", line 58, in await_many_dispatch
+    await task
+redis.exceptions.ConnectionError: Error 111 connecting to 192.168.68.176:6379. 111.
+2024-04-25 10:50:41,744 WARNING log 1 139341758199488 Not Found: /favicon.ico
+2024-04-25 10:50:41,968 ERROR server 1 139341901409152 Exception inside application: Error 111 connecting to 192.168.68.176:6379. 111.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/redis/asyncio/connection.py", line 274, in connect
+    await self.retry.call_with_retry(
+  File "/usr/local/lib/python3.10/site-packages/redis/asyncio/retry.py", line 59, in call_with_retry
+    return await do()
+  File "/usr/local/lib/python3.10/site-packages/redis/asyncio/connection.py", line 681, in _connect
+    reader, writer = await asyncio.open_connection(
+  File "/usr/local/lib/python3.10/asyncio/streams.py", line 48, in open_connection
+    transport, _ = await loop.create_connection(
+  File "/usr/local/lib/python3.10/asyncio/base_events.py", line 1076, in create_connection
+    raise exceptions[0]
+  File "/usr/local/lib/python3.10/asyncio/base_events.py", line 1060, in create_connection
+    sock = await self._connect_sock(
+  File "/usr/local/lib/python3.10/asyncio/base_events.py", line 969, in _connect_sock
+    await self.sock_connect(sock, address)
+  File "/usr/local/lib/python3.10/asyncio/selector_events.py", line 501, in sock_connect
+    return await fut
+  File "/usr/local/lib/python3.10/asyncio/selector_events.py", line 541, in _sock_connect_cb
+    raise OSError(err, f'Connect call failed {address}')
+ConnectionRefusedError: [Errno 111] Connect call failed ('192.168.68.176', 6379)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/channels/routing.py", line 71, in __call__
+    return await application(scope, receive, send)
+  File "/usr/local/lib/python3.10/site-packages/channels/sessions.py", line 47, in __call__
+    return await self.inner(dict(scope, cookies=cookies), receive, send)
+  File "/usr/local/lib/python3.10/site-packages/channels/sessions.py", line 263, in __call__
+    return await self.inner(wrapper.scope, receive, wrapper.send)
+  File "/usr/local/lib/python3.10/site-packages/channels/auth.py", line 185, in __call__
+    return await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.10/site-packages/channels/middleware.py", line 26, in __call__
+    return await self.inner(scope, receive, send)
+  File "/usr/local/lib/python3.10/site-packages/channels/routing.py", line 150, in __call__
+    return await application(
+  File "/usr/local/lib/python3.10/site-packages/channels/consumer.py", line 94, in app
+    return await consumer(scope, receive, send)
+  File "/usr/local/lib/python3.10/site-packages/channels/consumer.py", line 58, in __call__
+    await await_many_dispatch(
+  File "/usr/local/lib/python3.10/site-packages/channels/utils.py", line 58, in await_many_dispatch
+    await task
+redis.exceptions.ConnectionError: Error 111 connecting to 192.168.68.176:6379. 111.
+2024-04-25 10:50:42,450 WARNING log 1 139341758199488 Not Found: /favicon.ico
+2024-04-25 10:51:10,001 ERROR server 1 139341901409152 Exception inside application: Error 111 connecting to 192.168.68.176:6379. 111.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/redis/asyncio/connection.py", line 274, in connect
+    await self.retry.call_with_retry(
+  File "/usr/local/lib/python3.10/site-packages/redis/asyncio/retry.py", line 59, in call_with_retry
+    return await do()
+  File "/usr/local/lib/python3.10/site-packages/redis/asyncio/connection.py", line 681, in _connect
+    reader, writer = await asyncio.open_connection(
+  File "/usr/local/lib/python3.10/asyncio/streams.py", line 48, in open_connection
+    transport, _ = await loop.create_connection(
+  File "/usr/local/lib/python3.10/asyncio/base_events.py", line 1076, in create_connection
+    raise exceptions[0]
+  File "/usr/local/lib/python3.10/asyncio/base_events.py", line 1060, in create_connection
+    sock = await self._connect_sock(
+  File "/usr/local/lib/python3.10/asyncio/base_events.py", line 969, in _connect_sock
+    await self.sock_connect(sock, address)
+  File "/usr/local/lib/python3.10/asyncio/selector_events.py", line 501, in sock_connect
+    return await fut
+  File "/usr/local/lib/python3.10/asyncio/selector_events.py", line 541, in _sock_connect_cb
+    raise OSError(err, f'Connect call failed {address}')
+ConnectionRefusedError: [Errno 111] Connect call failed ('192.168.68.176', 6379)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/channels/routing.py", line 71, in __call__
+    return await application(scope, receive, send)
+  File "/usr/local/lib/python3.10/site-packages/channels/sessions.py", line 47, in __call__
+    return await self.inner(dict(scope, cookies=cookies), receive, send)
+  File "/usr/local/lib/python3.10/site-packages/channels/sessions.py", line 263, in __call__
+    return await self.inner(wrapper.scope, receive, wrapper.send)
+  File "/usr/local/lib/python3.10/site-packages/channels/auth.py", line 185, in __call__
+    return await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.10/site-packages/channels/middleware.py", line 26, in __call__
+    return await self.inner(scope, receive, send)
+  File "/usr/local/lib/python3.10/site-packages/channels/routing.py", line 150, in __call__
+    return await application(
+  File "/usr/local/lib/python3.10/site-packages/channels/consumer.py", line 94, in app
+    return await consumer(scope, receive, send)
+  File "/usr/local/lib/python3.10/site-packages/channels/consumer.py", line 58, in __call__
+    await await_many_dispatch(
+  File "/usr/local/lib/python3.10/site-packages/channels/utils.py", line 58, in await_many_dispatch
+    await task
+redis.exceptions.ConnectionError: Error 111 connecting to 192.168.68.176:6379. 111.
