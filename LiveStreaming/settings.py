@@ -51,7 +51,7 @@ ALLOWED_HOSTS = [
 ]
 # HTTPS configuration
 USE_X_FORWARDED_HOST = True
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https', 'wss')
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
 
@@ -108,11 +108,13 @@ ASGI_APPLICATION = 'LiveStreaming.asgi.application'
 
 WSGI_APPLICATION = 'LiveStreaming.wsgi.application'
 
+
+
 CHANNEL_LAYERS = {
-    "default": {
-        "BACKEND": "channels_redis.core.RedisChannelLayer",
-        "CONFIG": {
-            "hosts": [("127.0.0.1", 6379)],
+    'default': {
+        'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        'CONFIG': {
+            "hosts": [('localhost', 6379)],
         },
     },
 }

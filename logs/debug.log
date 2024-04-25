@@ -777,3 +777,1191 @@ KeyError: 'is_created'
 2024-04-24 16:12:38,012 INFO runserver 19959 131161113491008 WebSocket DISCONNECT /ws/ [127.0.0.1:50042]
 2024-04-24 16:12:40,762 INFO runserver 19959 131161113491008 WebSocket DISCONNECT /ws/ [127.0.0.1:58120]
 >>>>>>> cd5bf0daea94518b1e0266cae0693168c4e55ebb
+2024-04-25 06:32:21,787 INFO autoreload 28327 126122021969920 Watching for file changes with StatReloader
+2024-04-25 06:32:21,847 INFO server 28327 126121961678400 HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+2024-04-25 06:32:21,847 INFO server 28327 126121961678400 Configuring endpoint tcp:port=5011:interface=0.0.0.0
+2024-04-25 06:32:21,848 INFO server 28327 126121961678400 Listening on TCP address 0.0.0.0:5011
+2024-04-25 06:32:26,236 INFO runserver 28327 126121961678400 [mHTTP GET /communication/1/created/ 200 [0.04, 127.0.0.1:55968][0m
+2024-04-25 06:32:33,613 INFO runserver 28327 126121961678400 [mHTTP GET /communication/1/join/ 200 [0.02, 127.0.0.1:55970][0m
+2024-04-25 06:32:49,721 INFO runserver 28327 126121961678400 [mHTTP GET /communication/1/created/ 200 [0.02, 127.0.0.1:55968][0m
+2024-04-25 06:33:21,876 INFO runserver 28327 126121961678400 [mHTTP GET /communication/1/created/ 200 [0.01, 127.0.0.1:55968][0m
+2024-04-25 06:33:22,347 INFO runserver 28327 126121961678400 WebSocket HANDSHAKING /ws/ [127.0.0.1:58870]
+2024-04-25 06:33:22,923 ERROR server 28327 126121961678400 Exception inside application: Cannot import BACKEND 'channels_redis.core.RedisChannelLayer' specified for default
+Traceback (most recent call last):
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/channels/layers.py", line 65, in _make_backend
+    backend_class = import_string(self.configs[name]["BACKEND"])
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/utils/module_loading.py", line 30, in import_string
+    return cached_import(module_path, class_name)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/utils/module_loading.py", line 15, in cached_import
+    module = import_module(module_path)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 992, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1004, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'channels_redis'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/channels/staticfiles.py", line 44, in __call__
+    return await self.application(scope, receive, send)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/channels/routing.py", line 71, in __call__
+    return await application(scope, receive, send)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/channels/sessions.py", line 47, in __call__
+    return await self.inner(dict(scope, cookies=cookies), receive, send)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/channels/sessions.py", line 263, in __call__
+    return await self.inner(wrapper.scope, receive, wrapper.send)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/channels/auth.py", line 185, in __call__
+    return await super().__call__(scope, receive, send)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/channels/middleware.py", line 26, in __call__
+    return await self.inner(scope, receive, send)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/channels/routing.py", line 150, in __call__
+    return await application(
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/channels/consumer.py", line 94, in app
+    return await consumer(scope, receive, send)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/channels/consumer.py", line 44, in __call__
+    self.channel_layer = get_channel_layer(self.channel_layer_alias)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/channels/layers.py", line 359, in get_channel_layer
+    return channel_layers[alias]
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/channels/layers.py", line 78, in __getitem__
+    self.backends[key] = self.make_backend(key)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/channels/layers.py", line 44, in make_backend
+    return self._make_backend(name, config)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/channels/layers.py", line 69, in _make_backend
+    raise InvalidChannelLayerError(
+channels.exceptions.InvalidChannelLayerError: Cannot import BACKEND 'channels_redis.core.RedisChannelLayer' specified for default
+2024-04-25 06:33:22,930 INFO runserver 28327 126121961678400 WebSocket DISCONNECT /ws/ [127.0.0.1:58870]
+2024-04-25 06:37:34,343 INFO autoreload 4807 137767848407040 Watching for file changes with StatReloader
+2024-04-25 06:37:34,477 INFO server 4807 137767787636288 HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+2024-04-25 06:37:34,477 INFO server 4807 137767787636288 Configuring endpoint tcp:port=5011:interface=0.0.0.0
+2024-04-25 06:37:34,478 INFO server 4807 137767787636288 Listening on TCP address 0.0.0.0:5011
+2024-04-25 06:38:57,188 INFO runserver 4807 137767787636288 [mHTTP GET /communication/1/join/ 200 [0.01, 127.0.0.1:33366][0m
+2024-04-25 06:38:57,946 INFO runserver 4807 137767787636288 WebSocket HANDSHAKING /ws/ [127.0.0.1:33380]
+2024-04-25 06:38:58,552 ERROR server 4807 137767787636288 Exception inside application: Cannot import BACKEND 'channels_redis.core.RedisChannelLayer' specified for default
+Traceback (most recent call last):
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/channels/layers.py", line 65, in _make_backend
+    backend_class = import_string(self.configs[name]["BACKEND"])
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/utils/module_loading.py", line 30, in import_string
+    return cached_import(module_path, class_name)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/utils/module_loading.py", line 15, in cached_import
+    module = import_module(module_path)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 992, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1004, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'channels_redis'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/channels/staticfiles.py", line 44, in __call__
+    return await self.application(scope, receive, send)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/channels/routing.py", line 71, in __call__
+    return await application(scope, receive, send)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/channels/sessions.py", line 47, in __call__
+    return await self.inner(dict(scope, cookies=cookies), receive, send)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/channels/sessions.py", line 263, in __call__
+    return await self.inner(wrapper.scope, receive, wrapper.send)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/channels/auth.py", line 185, in __call__
+    return await super().__call__(scope, receive, send)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/channels/middleware.py", line 26, in __call__
+    return await self.inner(scope, receive, send)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/channels/routing.py", line 150, in __call__
+    return await application(
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/channels/consumer.py", line 94, in app
+    return await consumer(scope, receive, send)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/channels/consumer.py", line 44, in __call__
+    self.channel_layer = get_channel_layer(self.channel_layer_alias)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/channels/layers.py", line 359, in get_channel_layer
+    return channel_layers[alias]
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/channels/layers.py", line 78, in __getitem__
+    self.backends[key] = self.make_backend(key)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/channels/layers.py", line 44, in make_backend
+    return self._make_backend(name, config)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/channels/layers.py", line 69, in _make_backend
+    raise InvalidChannelLayerError(
+channels.exceptions.InvalidChannelLayerError: Cannot import BACKEND 'channels_redis.core.RedisChannelLayer' specified for default
+2024-04-25 06:38:58,556 INFO runserver 4807 137767787636288 WebSocket DISCONNECT /ws/ [127.0.0.1:33380]
+2024-04-25 06:38:59,557 ERROR server 4807 137767787636288 Exception inside application: The SECURE_PROXY_SSL_HEADER setting must be a tuple containing two values.
+Traceback (most recent call last):
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/core/handlers/exception.py", line 42, in inner
+    response = await get_response(request)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/core/handlers/base.py", line 235, in _get_response_async
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/core/handlers/base.py", line 313, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/urls/resolvers.py", line 725, in resolve
+    raise Resolver404({"tried": tried, "path": new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'manage/'>], [<URLResolver <module 'communication_room.urls' from '/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/communication_room/urls.py'> (None:None) ''>, <URLPattern '' [name='index']>], [<URLResolver <module 'communication_room.urls' from '/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/communication_room/urls.py'> (None:None) ''>, <URLPattern 'communication/<str:room_id>/' [name='join_communication']>], [<URLResolver <module 'communication_room.urls' from '/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/communication_room/urls.py'> (None:None) ''>, <URLPattern 'communication/<str:room_id>/<str:created>/' [name='communication']>]], 'path': 'favicon.ico'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/core/handlers/exception.py", line 42, in inner
+    response = await get_response(request)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/utils/deprecation.py", line 150, in __acall__
+    response = response or await self.get_response(request)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/core/handlers/exception.py", line 44, in inner
+    response = await sync_to_async(
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/asgiref/sync.py", line 468, in __call__
+    ret = await asyncio.shield(exec_coro)
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/asgiref/sync.py", line 520, in thread_handler
+    return func(*args, **kwargs)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/core/handlers/exception.py", line 66, in response_for_exception
+    response = debug.technical_404_response(request, exc)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/views/debug.py", line 652, in technical_404_response
+    return HttpResponseNotFound(t.render(c))
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/template/base.py", line 1059, in render
+    output = self.filter_expression.resolve(context)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/template/base.py", line 710, in resolve
+    obj = self.var.resolve(context)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/template/base.py", line 842, in resolve
+    value = self._resolve_lookup(context)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/template/base.py", line 909, in _resolve_lookup
+    current = current()
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/http/request.py", line 235, in build_absolute_uri
+    location = self._current_scheme_host + location.removeprefix("//")
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/http/request.py", line 245, in _current_scheme_host
+    return "{}://{}".format(self.scheme, self.get_host())
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/http/request.py", line 260, in scheme
+    raise ImproperlyConfigured(
+django.core.exceptions.ImproperlyConfigured: The SECURE_PROXY_SSL_HEADER setting must be a tuple containing two values.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/core/handlers/exception.py", line 42, in inner
+    response = await get_response(request)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/utils/deprecation.py", line 150, in __acall__
+    response = response or await self.get_response(request)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/core/handlers/exception.py", line 44, in inner
+    response = await sync_to_async(
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/asgiref/sync.py", line 468, in __call__
+    ret = await asyncio.shield(exec_coro)
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/asgiref/sync.py", line 520, in thread_handler
+    return func(*args, **kwargs)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/core/handlers/exception.py", line 140, in response_for_exception
+    response = handle_uncaught_exception(
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/core/handlers/exception.py", line 181, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/views/debug.py", line 69, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/views/debug.py", line 428, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/views/debug.py", line 410, in get_traceback_data
+    c["request_insecure_uri"] = self._get_raw_insecure_uri()
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/views/debug.py", line 339, in _get_raw_insecure_uri
+    scheme=self.request.scheme,
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/http/request.py", line 260, in scheme
+    raise ImproperlyConfigured(
+django.core.exceptions.ImproperlyConfigured: The SECURE_PROXY_SSL_HEADER setting must be a tuple containing two values.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/core/handlers/exception.py", line 42, in inner
+    response = await get_response(request)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/utils/deprecation.py", line 150, in __acall__
+    response = response or await self.get_response(request)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/core/handlers/exception.py", line 44, in inner
+    response = await sync_to_async(
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/asgiref/sync.py", line 468, in __call__
+    ret = await asyncio.shield(exec_coro)
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/asgiref/sync.py", line 520, in thread_handler
+    return func(*args, **kwargs)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/core/handlers/exception.py", line 140, in response_for_exception
+    response = handle_uncaught_exception(
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/core/handlers/exception.py", line 181, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/views/debug.py", line 69, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/views/debug.py", line 428, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/views/debug.py", line 410, in get_traceback_data
+    c["request_insecure_uri"] = self._get_raw_insecure_uri()
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/views/debug.py", line 339, in _get_raw_insecure_uri
+    scheme=self.request.scheme,
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/http/request.py", line 260, in scheme
+    raise ImproperlyConfigured(
+django.core.exceptions.ImproperlyConfigured: The SECURE_PROXY_SSL_HEADER setting must be a tuple containing two values.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/core/handlers/exception.py", line 42, in inner
+    response = await get_response(request)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/utils/deprecation.py", line 150, in __acall__
+    response = response or await self.get_response(request)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/core/handlers/exception.py", line 44, in inner
+    response = await sync_to_async(
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/asgiref/sync.py", line 468, in __call__
+    ret = await asyncio.shield(exec_coro)
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/asgiref/sync.py", line 520, in thread_handler
+    return func(*args, **kwargs)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/core/handlers/exception.py", line 140, in response_for_exception
+    response = handle_uncaught_exception(
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/core/handlers/exception.py", line 181, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/views/debug.py", line 69, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/views/debug.py", line 428, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/views/debug.py", line 410, in get_traceback_data
+    c["request_insecure_uri"] = self._get_raw_insecure_uri()
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/views/debug.py", line 339, in _get_raw_insecure_uri
+    scheme=self.request.scheme,
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/http/request.py", line 260, in scheme
+    raise ImproperlyConfigured(
+django.core.exceptions.ImproperlyConfigured: The SECURE_PROXY_SSL_HEADER setting must be a tuple containing two values.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/core/handlers/exception.py", line 42, in inner
+    response = await get_response(request)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/utils/deprecation.py", line 150, in __acall__
+    response = response or await self.get_response(request)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/core/handlers/exception.py", line 44, in inner
+    response = await sync_to_async(
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/asgiref/sync.py", line 468, in __call__
+    ret = await asyncio.shield(exec_coro)
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/asgiref/sync.py", line 520, in thread_handler
+    return func(*args, **kwargs)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/core/handlers/exception.py", line 140, in response_for_exception
+    response = handle_uncaught_exception(
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/core/handlers/exception.py", line 181, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/views/debug.py", line 69, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/views/debug.py", line 428, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/views/debug.py", line 410, in get_traceback_data
+    c["request_insecure_uri"] = self._get_raw_insecure_uri()
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/views/debug.py", line 339, in _get_raw_insecure_uri
+    scheme=self.request.scheme,
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/http/request.py", line 260, in scheme
+    raise ImproperlyConfigured(
+django.core.exceptions.ImproperlyConfigured: The SECURE_PROXY_SSL_HEADER setting must be a tuple containing two values.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/core/handlers/exception.py", line 42, in inner
+    response = await get_response(request)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/utils/deprecation.py", line 150, in __acall__
+    response = response or await self.get_response(request)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/core/handlers/exception.py", line 44, in inner
+    response = await sync_to_async(
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/asgiref/sync.py", line 468, in __call__
+    ret = await asyncio.shield(exec_coro)
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/asgiref/sync.py", line 520, in thread_handler
+    return func(*args, **kwargs)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/core/handlers/exception.py", line 140, in response_for_exception
+    response = handle_uncaught_exception(
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/core/handlers/exception.py", line 181, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/views/debug.py", line 69, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/views/debug.py", line 428, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/views/debug.py", line 410, in get_traceback_data
+    c["request_insecure_uri"] = self._get_raw_insecure_uri()
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/views/debug.py", line 339, in _get_raw_insecure_uri
+    scheme=self.request.scheme,
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/http/request.py", line 260, in scheme
+    raise ImproperlyConfigured(
+django.core.exceptions.ImproperlyConfigured: The SECURE_PROXY_SSL_HEADER setting must be a tuple containing two values.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/core/handlers/exception.py", line 42, in inner
+    response = await get_response(request)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/utils/deprecation.py", line 150, in __acall__
+    response = response or await self.get_response(request)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/core/handlers/exception.py", line 44, in inner
+    response = await sync_to_async(
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/asgiref/sync.py", line 468, in __call__
+    ret = await asyncio.shield(exec_coro)
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/asgiref/sync.py", line 520, in thread_handler
+    return func(*args, **kwargs)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/core/handlers/exception.py", line 140, in response_for_exception
+    response = handle_uncaught_exception(
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/core/handlers/exception.py", line 181, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/views/debug.py", line 69, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/views/debug.py", line 428, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/views/debug.py", line 410, in get_traceback_data
+    c["request_insecure_uri"] = self._get_raw_insecure_uri()
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/views/debug.py", line 339, in _get_raw_insecure_uri
+    scheme=self.request.scheme,
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/http/request.py", line 260, in scheme
+    raise ImproperlyConfigured(
+django.core.exceptions.ImproperlyConfigured: The SECURE_PROXY_SSL_HEADER setting must be a tuple containing two values.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/channels/staticfiles.py", line 44, in __call__
+    return await self.application(scope, receive, send)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/channels/routing.py", line 71, in __call__
+    return await application(scope, receive, send)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/core/handlers/asgi.py", line 170, in __call__
+    await self.handle(scope, receive, send)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/core/handlers/asgi.py", line 216, in handle
+    task.result()
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/core/handlers/asgi.py", line 193, in process_request
+    response = await self.run_get_response(request)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/core/handlers/asgi.py", line 252, in run_get_response
+    response = await self.get_response_async(request)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/core/handlers/base.py", line 162, in get_response_async
+    response = await self._middleware_chain(request)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/core/handlers/exception.py", line 44, in inner
+    response = await sync_to_async(
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/asgiref/sync.py", line 468, in __call__
+    ret = await asyncio.shield(exec_coro)
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/asgiref/sync.py", line 520, in thread_handler
+    return func(*args, **kwargs)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/core/handlers/exception.py", line 140, in response_for_exception
+    response = handle_uncaught_exception(
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/core/handlers/exception.py", line 181, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/views/debug.py", line 69, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/views/debug.py", line 428, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/views/debug.py", line 410, in get_traceback_data
+    c["request_insecure_uri"] = self._get_raw_insecure_uri()
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/views/debug.py", line 339, in _get_raw_insecure_uri
+    scheme=self.request.scheme,
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/http/request.py", line 260, in scheme
+    raise ImproperlyConfigured(
+django.core.exceptions.ImproperlyConfigured: The SECURE_PROXY_SSL_HEADER setting must be a tuple containing two values.
+2024-04-25 06:38:59,602 ERROR runserver 4807 137767787636288 [35;1mHTTP GET /favicon.ico 500 [1.68, 127.0.0.1:33366][0m
+2024-04-25 06:39:45,057 INFO autoreload 4807 137767848407040 /media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/LiveStreaming/settings.py changed, reloading.
+2024-04-25 06:39:45,578 INFO autoreload 5805 133827964035072 Watching for file changes with StatReloader
+2024-04-25 06:39:45,632 INFO server 5805 133827903825472 HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+2024-04-25 06:39:45,633 INFO server 5805 133827903825472 Configuring endpoint tcp:port=5011:interface=0.0.0.0
+2024-04-25 06:39:45,634 INFO server 5805 133827903825472 Listening on TCP address 0.0.0.0:5011
+2024-04-25 06:39:49,107 INFO runserver 5805 133827903825472 [mHTTP GET /communication/1/join/ 200 [0.01, 127.0.0.1:34946][0m
+2024-04-25 06:39:49,422 WARNING log 5805 133827816056384 Not Found: /favicon.ico
+2024-04-25 06:39:49,423 WARNING runserver 5805 133827903825472 [33mHTTP GET /favicon.ico 404 [0.01, 127.0.0.1:34946][0m
+2024-04-25 06:39:49,461 INFO runserver 5805 133827903825472 WebSocket HANDSHAKING /ws/ [127.0.0.1:34950]
+2024-04-25 06:39:49,636 ERROR server 5805 133827903825472 Exception inside application: Cannot import BACKEND 'channels_redis.core.RedisChannelLayer' specified for default
+Traceback (most recent call last):
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/channels/layers.py", line 65, in _make_backend
+    backend_class = import_string(self.configs[name]["BACKEND"])
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/utils/module_loading.py", line 30, in import_string
+    return cached_import(module_path, class_name)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/utils/module_loading.py", line 15, in cached_import
+    module = import_module(module_path)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 992, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1004, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'channels_redis'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/channels/staticfiles.py", line 44, in __call__
+    return await self.application(scope, receive, send)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/channels/routing.py", line 71, in __call__
+    return await application(scope, receive, send)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/channels/sessions.py", line 47, in __call__
+    return await self.inner(dict(scope, cookies=cookies), receive, send)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/channels/sessions.py", line 263, in __call__
+    return await self.inner(wrapper.scope, receive, wrapper.send)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/channels/auth.py", line 185, in __call__
+    return await super().__call__(scope, receive, send)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/channels/middleware.py", line 26, in __call__
+    return await self.inner(scope, receive, send)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/channels/routing.py", line 150, in __call__
+    return await application(
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/channels/consumer.py", line 94, in app
+    return await consumer(scope, receive, send)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/channels/consumer.py", line 44, in __call__
+    self.channel_layer = get_channel_layer(self.channel_layer_alias)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/channels/layers.py", line 359, in get_channel_layer
+    return channel_layers[alias]
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/channels/layers.py", line 78, in __getitem__
+    self.backends[key] = self.make_backend(key)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/channels/layers.py", line 44, in make_backend
+    return self._make_backend(name, config)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/channels/layers.py", line 69, in _make_backend
+    raise InvalidChannelLayerError(
+channels.exceptions.InvalidChannelLayerError: Cannot import BACKEND 'channels_redis.core.RedisChannelLayer' specified for default
+2024-04-25 06:39:49,638 INFO runserver 5805 133827903825472 WebSocket DISCONNECT /ws/ [127.0.0.1:34950]
+2024-04-25 06:39:56,100 INFO autoreload 5805 133827964035072 /media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/LiveStreaming/settings.py changed, reloading.
+2024-04-25 06:39:56,577 INFO autoreload 5882 124998007324672 Watching for file changes with StatReloader
+2024-04-25 06:39:56,633 INFO server 5882 124997947041344 HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+2024-04-25 06:39:56,633 INFO server 5882 124997947041344 Configuring endpoint tcp:port=5011:interface=0.0.0.0
+2024-04-25 06:39:56,634 INFO server 5882 124997947041344 Listening on TCP address 0.0.0.0:5011
+2024-04-25 06:39:58,819 INFO autoreload 5882 124998007324672 /media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/LiveStreaming/settings.py changed, reloading.
+2024-04-25 06:39:59,317 INFO autoreload 5901 129916334608384 Watching for file changes with StatReloader
+2024-04-25 06:39:59,375 INFO server 5901 129916273894976 HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+2024-04-25 06:39:59,376 INFO server 5901 129916273894976 Configuring endpoint tcp:port=5011:interface=0.0.0.0
+2024-04-25 06:39:59,376 INFO server 5901 129916273894976 Listening on TCP address 0.0.0.0:5011
+2024-04-25 06:40:03,338 INFO runserver 5901 129916273894976 [mHTTP GET /communication/1/join/ 200 [0.04, 127.0.0.1:45314][0m
+2024-04-25 06:40:04,030 INFO runserver 5901 129916273894976 WebSocket HANDSHAKING /ws/ [127.0.0.1:45316]
+2024-04-25 06:40:04,381 ERROR server 5901 129916273894976 Exception inside application: Cannot import BACKEND 'channels_redis.core.RedisChannelLayer' specified for default
+Traceback (most recent call last):
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/channels/layers.py", line 65, in _make_backend
+    backend_class = import_string(self.configs[name]["BACKEND"])
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/utils/module_loading.py", line 30, in import_string
+    return cached_import(module_path, class_name)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/utils/module_loading.py", line 15, in cached_import
+    module = import_module(module_path)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 992, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1004, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'channels_redis'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/channels/staticfiles.py", line 44, in __call__
+    return await self.application(scope, receive, send)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/channels/routing.py", line 71, in __call__
+    return await application(scope, receive, send)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/channels/sessions.py", line 47, in __call__
+    return await self.inner(dict(scope, cookies=cookies), receive, send)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/channels/sessions.py", line 263, in __call__
+    return await self.inner(wrapper.scope, receive, wrapper.send)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/channels/auth.py", line 185, in __call__
+    return await super().__call__(scope, receive, send)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/channels/middleware.py", line 26, in __call__
+    return await self.inner(scope, receive, send)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/channels/routing.py", line 150, in __call__
+    return await application(
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/channels/consumer.py", line 94, in app
+    return await consumer(scope, receive, send)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/channels/consumer.py", line 44, in __call__
+    self.channel_layer = get_channel_layer(self.channel_layer_alias)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/channels/layers.py", line 359, in get_channel_layer
+    return channel_layers[alias]
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/channels/layers.py", line 78, in __getitem__
+    self.backends[key] = self.make_backend(key)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/channels/layers.py", line 44, in make_backend
+    return self._make_backend(name, config)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/channels/layers.py", line 69, in _make_backend
+    raise InvalidChannelLayerError(
+channels.exceptions.InvalidChannelLayerError: Cannot import BACKEND 'channels_redis.core.RedisChannelLayer' specified for default
+2024-04-25 06:40:04,387 INFO runserver 5901 129916273894976 WebSocket DISCONNECT /ws/ [127.0.0.1:45316]
+2024-04-25 06:41:07,939 INFO autoreload 5901 129916334608384 /media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/LiveStreaming/settings.py changed, reloading.
+2024-04-25 06:41:08,416 INFO autoreload 6082 131287652749312 Watching for file changes with StatReloader
+2024-04-25 06:41:08,466 INFO server 6082 131287592150592 HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+2024-04-25 06:41:08,467 INFO server 6082 131287592150592 Configuring endpoint tcp:port=5011:interface=0.0.0.0
+2024-04-25 06:41:08,468 INFO server 6082 131287592150592 Listening on TCP address 0.0.0.0:5011
+2024-04-25 06:41:12,051 INFO runserver 6082 131287592150592 [mHTTP GET /communication/1/join/ 200 [0.02, 127.0.0.1:46168][0m
+2024-04-25 06:41:12,356 INFO runserver 6082 131287592150592 WebSocket HANDSHAKING /ws/ [127.0.0.1:46170]
+2024-04-25 06:41:12,471 ERROR server 6082 131287592150592 Exception inside application: Cannot import BACKEND 'channels_redis.core.RedisChannelLayer' specified for default
+Traceback (most recent call last):
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/channels/layers.py", line 65, in _make_backend
+    backend_class = import_string(self.configs[name]["BACKEND"])
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/utils/module_loading.py", line 30, in import_string
+    return cached_import(module_path, class_name)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/utils/module_loading.py", line 15, in cached_import
+    module = import_module(module_path)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 992, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1004, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'channels_redis'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/channels/staticfiles.py", line 44, in __call__
+    return await self.application(scope, receive, send)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/channels/routing.py", line 71, in __call__
+    return await application(scope, receive, send)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/channels/sessions.py", line 47, in __call__
+    return await self.inner(dict(scope, cookies=cookies), receive, send)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/channels/sessions.py", line 263, in __call__
+    return await self.inner(wrapper.scope, receive, wrapper.send)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/channels/auth.py", line 185, in __call__
+    return await super().__call__(scope, receive, send)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/channels/middleware.py", line 26, in __call__
+    return await self.inner(scope, receive, send)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/channels/routing.py", line 150, in __call__
+    return await application(
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/channels/consumer.py", line 94, in app
+    return await consumer(scope, receive, send)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/channels/consumer.py", line 44, in __call__
+    self.channel_layer = get_channel_layer(self.channel_layer_alias)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/channels/layers.py", line 359, in get_channel_layer
+    return channel_layers[alias]
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/channels/layers.py", line 78, in __getitem__
+    self.backends[key] = self.make_backend(key)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/channels/layers.py", line 44, in make_backend
+    return self._make_backend(name, config)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/channels/layers.py", line 69, in _make_backend
+    raise InvalidChannelLayerError(
+channels.exceptions.InvalidChannelLayerError: Cannot import BACKEND 'channels_redis.core.RedisChannelLayer' specified for default
+2024-04-25 06:41:12,481 INFO runserver 6082 131287592150592 WebSocket DISCONNECT /ws/ [127.0.0.1:46170]
+2024-04-25 06:42:05,875 INFO autoreload 6082 131287652749312 /media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/LiveStreaming/settings.py changed, reloading.
+2024-04-25 06:42:06,336 INFO autoreload 6283 137624276262912 Watching for file changes with StatReloader
+2024-04-25 06:42:06,378 INFO server 6283 137624215561792 HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+2024-04-25 06:42:06,378 INFO server 6283 137624215561792 Configuring endpoint tcp:port=5011:interface=0.0.0.0
+2024-04-25 06:42:06,379 INFO server 6283 137624215561792 Listening on TCP address 0.0.0.0:5011
+2024-04-25 06:42:10,993 INFO runserver 6283 137624215561792 [mHTTP GET /communication/1/join/ 200 [0.04, 127.0.0.1:52088][0m
+2024-04-25 06:42:11,368 INFO runserver 6283 137624215561792 WebSocket HANDSHAKING /ws/ [127.0.0.1:52090]
+2024-04-25 06:42:11,382 ERROR server 6283 137624215561792 Exception inside application: Cannot import BACKEND 'channels_redis.core.RedisChannelLayer' specified for default
+Traceback (most recent call last):
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/channels/layers.py", line 65, in _make_backend
+    backend_class = import_string(self.configs[name]["BACKEND"])
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/utils/module_loading.py", line 30, in import_string
+    return cached_import(module_path, class_name)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/utils/module_loading.py", line 15, in cached_import
+    module = import_module(module_path)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 992, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1004, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'channels_redis'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/channels/staticfiles.py", line 44, in __call__
+    return await self.application(scope, receive, send)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/channels/routing.py", line 71, in __call__
+    return await application(scope, receive, send)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/channels/sessions.py", line 47, in __call__
+    return await self.inner(dict(scope, cookies=cookies), receive, send)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/channels/sessions.py", line 263, in __call__
+    return await self.inner(wrapper.scope, receive, wrapper.send)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/channels/auth.py", line 185, in __call__
+    return await super().__call__(scope, receive, send)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/channels/middleware.py", line 26, in __call__
+    return await self.inner(scope, receive, send)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/channels/routing.py", line 150, in __call__
+    return await application(
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/channels/consumer.py", line 94, in app
+    return await consumer(scope, receive, send)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/channels/consumer.py", line 44, in __call__
+    self.channel_layer = get_channel_layer(self.channel_layer_alias)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/channels/layers.py", line 359, in get_channel_layer
+    return channel_layers[alias]
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/channels/layers.py", line 78, in __getitem__
+    self.backends[key] = self.make_backend(key)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/channels/layers.py", line 44, in make_backend
+    return self._make_backend(name, config)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/channels/layers.py", line 69, in _make_backend
+    raise InvalidChannelLayerError(
+channels.exceptions.InvalidChannelLayerError: Cannot import BACKEND 'channels_redis.core.RedisChannelLayer' specified for default
+2024-04-25 06:42:11,385 INFO runserver 6283 137624215561792 WebSocket DISCONNECT /ws/ [127.0.0.1:52090]
+2024-04-25 06:43:43,751 INFO autoreload 6283 137624276262912 /media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/LiveStreaming/settings.py changed, reloading.
+2024-04-25 06:44:56,605 INFO autoreload 6663 131143284281344 Watching for file changes with StatReloader
+2024-04-25 06:44:56,664 INFO server 6663 131143224092224 HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+2024-04-25 06:44:56,664 INFO server 6663 131143224092224 Configuring endpoint tcp:port=5011:interface=0.0.0.0
+2024-04-25 06:44:56,665 INFO server 6663 131143224092224 Listening on TCP address 0.0.0.0:5011
+2024-04-25 06:45:03,050 INFO runserver 6663 131143224092224 [mHTTP GET /communication/1/join/ 200 [0.01, 127.0.0.1:50850][0m
+2024-04-25 06:45:03,542 INFO runserver 6663 131143224092224 WebSocket HANDSHAKING /ws/ [127.0.0.1:50858]
+2024-04-25 06:45:03,670 ERROR server 6663 131143224092224 Exception inside application: Cannot import BACKEND 'channels_redis.core.RedisChannelLayer' specified for default
+Traceback (most recent call last):
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/channels/layers.py", line 65, in _make_backend
+    backend_class = import_string(self.configs[name]["BACKEND"])
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/utils/module_loading.py", line 30, in import_string
+    return cached_import(module_path, class_name)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/utils/module_loading.py", line 15, in cached_import
+    module = import_module(module_path)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 992, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1004, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'channels_redis'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/channels/staticfiles.py", line 44, in __call__
+    return await self.application(scope, receive, send)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/channels/routing.py", line 71, in __call__
+    return await application(scope, receive, send)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/channels/sessions.py", line 47, in __call__
+    return await self.inner(dict(scope, cookies=cookies), receive, send)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/channels/sessions.py", line 263, in __call__
+    return await self.inner(wrapper.scope, receive, wrapper.send)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/channels/auth.py", line 185, in __call__
+    return await super().__call__(scope, receive, send)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/channels/middleware.py", line 26, in __call__
+    return await self.inner(scope, receive, send)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/channels/routing.py", line 150, in __call__
+    return await application(
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/channels/consumer.py", line 94, in app
+    return await consumer(scope, receive, send)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/channels/consumer.py", line 44, in __call__
+    self.channel_layer = get_channel_layer(self.channel_layer_alias)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/channels/layers.py", line 359, in get_channel_layer
+    return channel_layers[alias]
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/channels/layers.py", line 78, in __getitem__
+    self.backends[key] = self.make_backend(key)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/channels/layers.py", line 44, in make_backend
+    return self._make_backend(name, config)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/channels/layers.py", line 69, in _make_backend
+    raise InvalidChannelLayerError(
+channels.exceptions.InvalidChannelLayerError: Cannot import BACKEND 'channels_redis.core.RedisChannelLayer' specified for default
+2024-04-25 06:45:03,672 INFO runserver 6663 131143224092224 WebSocket DISCONNECT /ws/ [127.0.0.1:50858]
+2024-04-25 06:45:56,846 INFO autoreload 6735 128366499811328 Watching for file changes with StatReloader
+2024-04-25 06:45:56,894 INFO server 6735 128366439654976 HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+2024-04-25 06:45:56,894 INFO server 6735 128366439654976 Configuring endpoint tcp:port=5011:interface=0.0.0.0
+2024-04-25 06:45:56,895 INFO server 6735 128366439654976 Listening on TCP address 0.0.0.0:5011
+2024-04-25 06:46:00,320 INFO runserver 6735 128366439654976 [mHTTP GET /communication/1/join/ 200 [0.01, 127.0.0.1:44852][0m
+2024-04-25 06:46:00,788 INFO runserver 6735 128366439654976 WebSocket HANDSHAKING /ws/ [127.0.0.1:44864]
+2024-04-25 06:46:00,844 INFO runserver 6735 128366439654976 WebSocket CONNECT /ws/ [127.0.0.1:44864]
+2024-04-25 06:46:04,906 ERROR server 6735 128366439654976 Exception inside application: The SECURE_PROXY_SSL_HEADER setting must be a tuple containing two values.
+Traceback (most recent call last):
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/core/handlers/exception.py", line 42, in inner
+    response = await get_response(request)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/core/handlers/base.py", line 235, in _get_response_async
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/core/handlers/base.py", line 313, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/urls/resolvers.py", line 725, in resolve
+    raise Resolver404({"tried": tried, "path": new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'manage/'>], [<URLResolver <module 'communication_room.urls' from '/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/communication_room/urls.py'> (None:None) ''>, <URLPattern '' [name='index']>], [<URLResolver <module 'communication_room.urls' from '/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/communication_room/urls.py'> (None:None) ''>, <URLPattern 'communication/<str:room_id>/' [name='join_communication']>], [<URLResolver <module 'communication_room.urls' from '/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/communication_room/urls.py'> (None:None) ''>, <URLPattern 'communication/<str:room_id>/<str:created>/' [name='communication']>]], 'path': 'favicon.ico'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/core/handlers/exception.py", line 42, in inner
+    response = await get_response(request)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/utils/deprecation.py", line 150, in __acall__
+    response = response or await self.get_response(request)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/core/handlers/exception.py", line 44, in inner
+    response = await sync_to_async(
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/asgiref/sync.py", line 468, in __call__
+    ret = await asyncio.shield(exec_coro)
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/asgiref/sync.py", line 520, in thread_handler
+    return func(*args, **kwargs)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/core/handlers/exception.py", line 66, in response_for_exception
+    response = debug.technical_404_response(request, exc)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/views/debug.py", line 652, in technical_404_response
+    return HttpResponseNotFound(t.render(c))
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/template/base.py", line 1059, in render
+    output = self.filter_expression.resolve(context)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/template/base.py", line 710, in resolve
+    obj = self.var.resolve(context)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/template/base.py", line 842, in resolve
+    value = self._resolve_lookup(context)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/template/base.py", line 909, in _resolve_lookup
+    current = current()
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/http/request.py", line 235, in build_absolute_uri
+    location = self._current_scheme_host + location.removeprefix("//")
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/http/request.py", line 245, in _current_scheme_host
+    return "{}://{}".format(self.scheme, self.get_host())
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/http/request.py", line 260, in scheme
+    raise ImproperlyConfigured(
+django.core.exceptions.ImproperlyConfigured: The SECURE_PROXY_SSL_HEADER setting must be a tuple containing two values.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/core/handlers/exception.py", line 42, in inner
+    response = await get_response(request)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/utils/deprecation.py", line 150, in __acall__
+    response = response or await self.get_response(request)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/core/handlers/exception.py", line 44, in inner
+    response = await sync_to_async(
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/asgiref/sync.py", line 468, in __call__
+    ret = await asyncio.shield(exec_coro)
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/asgiref/sync.py", line 520, in thread_handler
+    return func(*args, **kwargs)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/core/handlers/exception.py", line 140, in response_for_exception
+    response = handle_uncaught_exception(
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/core/handlers/exception.py", line 181, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/views/debug.py", line 69, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/views/debug.py", line 428, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/views/debug.py", line 410, in get_traceback_data
+    c["request_insecure_uri"] = self._get_raw_insecure_uri()
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/views/debug.py", line 339, in _get_raw_insecure_uri
+    scheme=self.request.scheme,
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/http/request.py", line 260, in scheme
+    raise ImproperlyConfigured(
+django.core.exceptions.ImproperlyConfigured: The SECURE_PROXY_SSL_HEADER setting must be a tuple containing two values.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/core/handlers/exception.py", line 42, in inner
+    response = await get_response(request)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/utils/deprecation.py", line 150, in __acall__
+    response = response or await self.get_response(request)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/core/handlers/exception.py", line 44, in inner
+    response = await sync_to_async(
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/asgiref/sync.py", line 468, in __call__
+    ret = await asyncio.shield(exec_coro)
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/asgiref/sync.py", line 520, in thread_handler
+    return func(*args, **kwargs)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/core/handlers/exception.py", line 140, in response_for_exception
+    response = handle_uncaught_exception(
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/core/handlers/exception.py", line 181, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/views/debug.py", line 69, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/views/debug.py", line 428, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/views/debug.py", line 410, in get_traceback_data
+    c["request_insecure_uri"] = self._get_raw_insecure_uri()
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/views/debug.py", line 339, in _get_raw_insecure_uri
+    scheme=self.request.scheme,
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/http/request.py", line 260, in scheme
+    raise ImproperlyConfigured(
+django.core.exceptions.ImproperlyConfigured: The SECURE_PROXY_SSL_HEADER setting must be a tuple containing two values.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/core/handlers/exception.py", line 42, in inner
+    response = await get_response(request)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/utils/deprecation.py", line 150, in __acall__
+    response = response or await self.get_response(request)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/core/handlers/exception.py", line 44, in inner
+    response = await sync_to_async(
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/asgiref/sync.py", line 468, in __call__
+    ret = await asyncio.shield(exec_coro)
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/asgiref/sync.py", line 520, in thread_handler
+    return func(*args, **kwargs)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/core/handlers/exception.py", line 140, in response_for_exception
+    response = handle_uncaught_exception(
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/core/handlers/exception.py", line 181, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/views/debug.py", line 69, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/views/debug.py", line 428, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/views/debug.py", line 410, in get_traceback_data
+    c["request_insecure_uri"] = self._get_raw_insecure_uri()
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/views/debug.py", line 339, in _get_raw_insecure_uri
+    scheme=self.request.scheme,
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/http/request.py", line 260, in scheme
+    raise ImproperlyConfigured(
+django.core.exceptions.ImproperlyConfigured: The SECURE_PROXY_SSL_HEADER setting must be a tuple containing two values.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/core/handlers/exception.py", line 42, in inner
+    response = await get_response(request)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/utils/deprecation.py", line 150, in __acall__
+    response = response or await self.get_response(request)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/core/handlers/exception.py", line 44, in inner
+    response = await sync_to_async(
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/asgiref/sync.py", line 468, in __call__
+    ret = await asyncio.shield(exec_coro)
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/asgiref/sync.py", line 520, in thread_handler
+    return func(*args, **kwargs)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/core/handlers/exception.py", line 140, in response_for_exception
+    response = handle_uncaught_exception(
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/core/handlers/exception.py", line 181, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/views/debug.py", line 69, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/views/debug.py", line 428, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/views/debug.py", line 410, in get_traceback_data
+    c["request_insecure_uri"] = self._get_raw_insecure_uri()
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/views/debug.py", line 339, in _get_raw_insecure_uri
+    scheme=self.request.scheme,
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/http/request.py", line 260, in scheme
+    raise ImproperlyConfigured(
+django.core.exceptions.ImproperlyConfigured: The SECURE_PROXY_SSL_HEADER setting must be a tuple containing two values.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/core/handlers/exception.py", line 42, in inner
+    response = await get_response(request)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/utils/deprecation.py", line 150, in __acall__
+    response = response or await self.get_response(request)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/core/handlers/exception.py", line 44, in inner
+    response = await sync_to_async(
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/asgiref/sync.py", line 468, in __call__
+    ret = await asyncio.shield(exec_coro)
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/asgiref/sync.py", line 520, in thread_handler
+    return func(*args, **kwargs)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/core/handlers/exception.py", line 140, in response_for_exception
+    response = handle_uncaught_exception(
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/core/handlers/exception.py", line 181, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/views/debug.py", line 69, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/views/debug.py", line 428, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/views/debug.py", line 410, in get_traceback_data
+    c["request_insecure_uri"] = self._get_raw_insecure_uri()
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/views/debug.py", line 339, in _get_raw_insecure_uri
+    scheme=self.request.scheme,
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/http/request.py", line 260, in scheme
+    raise ImproperlyConfigured(
+django.core.exceptions.ImproperlyConfigured: The SECURE_PROXY_SSL_HEADER setting must be a tuple containing two values.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/core/handlers/exception.py", line 42, in inner
+    response = await get_response(request)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/utils/deprecation.py", line 150, in __acall__
+    response = response or await self.get_response(request)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/core/handlers/exception.py", line 44, in inner
+    response = await sync_to_async(
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/asgiref/sync.py", line 468, in __call__
+    ret = await asyncio.shield(exec_coro)
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/asgiref/sync.py", line 520, in thread_handler
+    return func(*args, **kwargs)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/core/handlers/exception.py", line 140, in response_for_exception
+    response = handle_uncaught_exception(
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/core/handlers/exception.py", line 181, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/views/debug.py", line 69, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/views/debug.py", line 428, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/views/debug.py", line 410, in get_traceback_data
+    c["request_insecure_uri"] = self._get_raw_insecure_uri()
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/views/debug.py", line 339, in _get_raw_insecure_uri
+    scheme=self.request.scheme,
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/http/request.py", line 260, in scheme
+    raise ImproperlyConfigured(
+django.core.exceptions.ImproperlyConfigured: The SECURE_PROXY_SSL_HEADER setting must be a tuple containing two values.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/channels/staticfiles.py", line 44, in __call__
+    return await self.application(scope, receive, send)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/channels/routing.py", line 71, in __call__
+    return await application(scope, receive, send)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/core/handlers/asgi.py", line 170, in __call__
+    await self.handle(scope, receive, send)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/core/handlers/asgi.py", line 216, in handle
+    task.result()
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/core/handlers/asgi.py", line 193, in process_request
+    response = await self.run_get_response(request)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/core/handlers/asgi.py", line 252, in run_get_response
+    response = await self.get_response_async(request)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/core/handlers/base.py", line 162, in get_response_async
+    response = await self._middleware_chain(request)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/core/handlers/exception.py", line 44, in inner
+    response = await sync_to_async(
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/asgiref/sync.py", line 468, in __call__
+    ret = await asyncio.shield(exec_coro)
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/asgiref/sync.py", line 520, in thread_handler
+    return func(*args, **kwargs)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/core/handlers/exception.py", line 140, in response_for_exception
+    response = handle_uncaught_exception(
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/core/handlers/exception.py", line 181, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/views/debug.py", line 69, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/views/debug.py", line 428, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/views/debug.py", line 410, in get_traceback_data
+    c["request_insecure_uri"] = self._get_raw_insecure_uri()
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/views/debug.py", line 339, in _get_raw_insecure_uri
+    scheme=self.request.scheme,
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/http/request.py", line 260, in scheme
+    raise ImproperlyConfigured(
+django.core.exceptions.ImproperlyConfigured: The SECURE_PROXY_SSL_HEADER setting must be a tuple containing two values.
+2024-04-25 06:46:04,929 ERROR runserver 6735 128366439654976 [35;1mHTTP GET /favicon.ico 500 [1.60, 127.0.0.1:44852][0m
+2024-04-25 06:46:26,316 INFO autoreload 6735 128366499811328 /media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/LiveStreaming/settings.py changed, reloading.
+2024-04-25 06:46:26,897 INFO autoreload 6840 123135080902656 Watching for file changes with StatReloader
+2024-04-25 06:46:26,961 INFO server 6840 123135020705344 HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+2024-04-25 06:46:26,961 INFO server 6840 123135020705344 Configuring endpoint tcp:port=5011:interface=0.0.0.0
+2024-04-25 06:46:26,962 INFO server 6840 123135020705344 Listening on TCP address 0.0.0.0:5011
+2024-04-25 06:46:29,184 INFO runserver 6840 123135020705344 [mHTTP GET /communication/1/join/ 200 [0.03, 127.0.0.1:57434][0m
+2024-04-25 06:46:29,474 INFO runserver 6840 123135020705344 WebSocket HANDSHAKING /ws/ [127.0.0.1:57448]
+2024-04-25 06:46:29,511 INFO runserver 6840 123135020705344 WebSocket CONNECT /ws/ [127.0.0.1:57448]
+2024-04-25 06:46:29,957 WARNING log 6840 123134995854912 Not Found: /favicon.ico
+2024-04-25 06:46:29,960 WARNING runserver 6840 123135020705344 [33mHTTP GET /favicon.ico 404 [0.05, 127.0.0.1:57434][0m
+2024-04-25 06:47:07,673 INFO runserver 6840 123135020705344 [mHTTP GET /communication/1/join/ 200 [0.02, 127.0.0.1:40352][0m
+2024-04-25 06:47:22,742 INFO runserver 6840 123135020705344 [mHTTP GET /communication/1/created/ 200 [0.02, 127.0.0.1:57434][0m
+2024-04-25 06:47:22,921 INFO runserver 6840 123135020705344 WebSocket DISCONNECT /ws/ [127.0.0.1:57448]
+2024-04-25 06:47:23,270 INFO runserver 6840 123135020705344 WebSocket HANDSHAKING /ws/ [127.0.0.1:58410]
+2024-04-25 06:47:23,272 INFO runserver 6840 123135020705344 WebSocket CONNECT /ws/ [127.0.0.1:58410]
+2024-04-25 06:47:23,757 WARNING log 6840 123134995854912 Not Found: /favicon.ico
+2024-04-25 06:47:23,757 WARNING runserver 6840 123135020705344 [33mHTTP GET /favicon.ico 404 [0.01, 127.0.0.1:57434][0m
+2024-04-25 06:47:51,926 INFO runserver 6840 123135020705344 [mHTTP GET /communication/1/join/ 200 [0.02, 127.0.0.1:51344][0m
+2024-04-25 06:47:53,645 WARNING log 6840 123134995854912 Not Found: /favicon.ico
+2024-04-25 06:47:53,646 WARNING runserver 6840 123135020705344 [33mHTTP GET /favicon.ico 404 [0.05, 127.0.0.1:51344][0m
+2024-04-25 06:47:54,958 INFO runserver 6840 123135020705344 WebSocket HANDSHAKING /ws/ [127.0.0.1:34856]
+2024-04-25 06:47:54,963 INFO runserver 6840 123135020705344 WebSocket CONNECT /ws/ [127.0.0.1:34856]
+2024-04-25 06:48:24,062 INFO runserver 6840 123135020705344 WebSocket DISCONNECT /ws/ [127.0.0.1:34856]
+2024-04-25 06:48:26,288 INFO runserver 6840 123135020705344 [mHTTP GET /communication/1/join/ 200 [0.02, 127.0.0.1:51344][0m
+2024-04-25 06:48:26,879 INFO runserver 6840 123135020705344 WebSocket HANDSHAKING /ws/ [127.0.0.1:34812]
+2024-04-25 06:48:26,883 INFO runserver 6840 123135020705344 WebSocket CONNECT /ws/ [127.0.0.1:34812]
+2024-04-25 06:48:35,468 INFO core 6840 123135020705344 1 of 5 channels over capacity in group 1
+2024-04-25 06:48:35,471 INFO core 6840 123135020705344 1 of 5 channels over capacity in group 1
+2024-04-25 06:48:35,473 INFO core 6840 123135020705344 1 of 5 channels over capacity in group 1
+2024-04-25 06:48:35,475 INFO core 6840 123135020705344 1 of 5 channels over capacity in group 1
+2024-04-25 06:48:35,479 INFO core 6840 123135020705344 1 of 5 channels over capacity in group 1
+2024-04-25 06:48:35,482 INFO core 6840 123135020705344 1 of 5 channels over capacity in group 1
+2024-04-25 06:48:35,486 INFO core 6840 123135020705344 1 of 5 channels over capacity in group 1
+2024-04-25 06:48:35,489 INFO core 6840 123135020705344 1 of 5 channels over capacity in group 1
+2024-04-25 06:48:35,492 INFO core 6840 123135020705344 1 of 5 channels over capacity in group 1
+2024-04-25 06:48:35,495 INFO core 6840 123135020705344 1 of 5 channels over capacity in group 1
+2024-04-25 06:48:35,549 INFO core 6840 123135020705344 1 of 5 channels over capacity in group 1
+2024-04-25 06:48:35,574 INFO core 6840 123135020705344 1 of 5 channels over capacity in group 1
+2024-04-25 06:48:35,594 INFO core 6840 123135020705344 1 of 5 channels over capacity in group 1
+2024-04-25 06:48:35,613 INFO core 6840 123135020705344 1 of 5 channels over capacity in group 1
+2024-04-25 06:48:35,641 INFO core 6840 123135020705344 1 of 5 channels over capacity in group 1
+2024-04-25 06:48:35,647 INFO core 6840 123135020705344 1 of 5 channels over capacity in group 1
+2024-04-25 06:48:35,652 INFO core 6840 123135020705344 1 of 5 channels over capacity in group 1
+2024-04-25 06:48:35,663 INFO core 6840 123135020705344 1 of 5 channels over capacity in group 1
+2024-04-25 06:48:35,668 INFO core 6840 123135020705344 1 of 5 channels over capacity in group 1
+2024-04-25 06:48:35,669 INFO core 6840 123135020705344 1 of 5 channels over capacity in group 1
+2024-04-25 06:48:35,673 INFO core 6840 123135020705344 1 of 5 channels over capacity in group 1
+2024-04-25 06:48:35,674 INFO core 6840 123135020705344 1 of 5 channels over capacity in group 1
+2024-04-25 06:48:35,678 INFO core 6840 123135020705344 1 of 5 channels over capacity in group 1
+2024-04-25 06:48:35,679 INFO core 6840 123135020705344 1 of 5 channels over capacity in group 1
+2024-04-25 06:48:35,681 INFO core 6840 123135020705344 1 of 5 channels over capacity in group 1
+2024-04-25 06:48:35,683 INFO core 6840 123135020705344 1 of 5 channels over capacity in group 1
+2024-04-25 06:48:35,686 INFO core 6840 123135020705344 1 of 5 channels over capacity in group 1
+2024-04-25 06:48:35,691 INFO core 6840 123135020705344 1 of 5 channels over capacity in group 1
+2024-04-25 06:48:35,694 INFO core 6840 123135020705344 1 of 5 channels over capacity in group 1
+2024-04-25 06:48:35,697 INFO core 6840 123135020705344 1 of 5 channels over capacity in group 1
+2024-04-25 06:48:35,700 INFO core 6840 123135020705344 1 of 5 channels over capacity in group 1
+2024-04-25 06:48:35,704 INFO core 6840 123135020705344 1 of 5 channels over capacity in group 1
+2024-04-25 06:48:35,709 INFO core 6840 123135020705344 1 of 5 channels over capacity in group 1
+2024-04-25 06:48:35,713 INFO core 6840 123135020705344 1 of 5 channels over capacity in group 1
+2024-04-25 06:48:35,718 INFO core 6840 123135020705344 1 of 5 channels over capacity in group 1
+2024-04-25 06:48:35,721 INFO core 6840 123135020705344 1 of 5 channels over capacity in group 1
+2024-04-25 06:48:35,788 INFO core 6840 123135020705344 1 of 5 channels over capacity in group 1
+2024-04-25 06:48:35,789 INFO core 6840 123135020705344 1 of 5 channels over capacity in group 1
+2024-04-25 06:48:35,791 INFO core 6840 123135020705344 1 of 5 channels over capacity in group 1
+2024-04-25 06:48:35,838 INFO core 6840 123135020705344 1 of 5 channels over capacity in group 1
+2024-04-25 06:48:35,841 INFO core 6840 123135020705344 1 of 5 channels over capacity in group 1
+2024-04-25 06:48:35,844 INFO core 6840 123135020705344 1 of 5 channels over capacity in group 1
+2024-04-25 06:48:35,847 INFO core 6840 123135020705344 1 of 5 channels over capacity in group 1
+2024-04-25 06:48:35,851 INFO core 6840 123135020705344 1 of 5 channels over capacity in group 1
+2024-04-25 06:48:35,854 INFO core 6840 123135020705344 1 of 5 channels over capacity in group 1
+2024-04-25 06:48:35,857 INFO core 6840 123135020705344 1 of 5 channels over capacity in group 1
+2024-04-25 06:48:35,868 INFO core 6840 123135020705344 1 of 5 channels over capacity in group 1
+2024-04-25 06:48:35,869 INFO core 6840 123135020705344 1 of 5 channels over capacity in group 1
+2024-04-25 06:48:35,871 INFO core 6840 123135020705344 1 of 5 channels over capacity in group 1
+2024-04-25 06:48:35,872 INFO core 6840 123135020705344 1 of 5 channels over capacity in group 1
+2024-04-25 06:48:35,874 INFO core 6840 123135020705344 1 of 5 channels over capacity in group 1
+2024-04-25 06:48:35,876 INFO core 6840 123135020705344 1 of 5 channels over capacity in group 1
+2024-04-25 06:48:35,878 INFO core 6840 123135020705344 1 of 5 channels over capacity in group 1
+2024-04-25 06:48:35,881 INFO core 6840 123135020705344 1 of 5 channels over capacity in group 1
+2024-04-25 06:48:35,884 INFO core 6840 123135020705344 1 of 5 channels over capacity in group 1
+2024-04-25 06:48:35,887 INFO core 6840 123135020705344 1 of 5 channels over capacity in group 1
+2024-04-25 06:48:35,890 INFO core 6840 123135020705344 1 of 5 channels over capacity in group 1
+2024-04-25 06:48:35,892 INFO core 6840 123135020705344 1 of 5 channels over capacity in group 1
+2024-04-25 06:48:35,895 INFO core 6840 123135020705344 1 of 5 channels over capacity in group 1
+2024-04-25 06:48:35,897 INFO core 6840 123135020705344 1 of 5 channels over capacity in group 1
+2024-04-25 06:48:35,899 INFO core 6840 123135020705344 1 of 5 channels over capacity in group 1
+2024-04-25 06:48:35,901 INFO core 6840 123135020705344 1 of 5 channels over capacity in group 1
+2024-04-25 06:48:35,907 INFO core 6840 123135020705344 1 of 5 channels over capacity in group 1
+2024-04-25 06:48:35,911 INFO core 6840 123135020705344 1 of 5 channels over capacity in group 1
+2024-04-25 06:48:35,920 INFO core 6840 123135020705344 1 of 5 channels over capacity in group 1
+2024-04-25 06:48:35,926 INFO core 6840 123135020705344 1 of 5 channels over capacity in group 1
+2024-04-25 06:48:35,947 INFO core 6840 123135020705344 1 of 5 channels over capacity in group 1
+2024-04-25 06:48:35,949 INFO core 6840 123135020705344 1 of 5 channels over capacity in group 1
+2024-04-25 06:48:35,952 INFO core 6840 123135020705344 1 of 5 channels over capacity in group 1
+2024-04-25 06:48:35,995 INFO core 6840 123135020705344 1 of 5 channels over capacity in group 1
+2024-04-25 06:48:35,998 INFO core 6840 123135020705344 1 of 5 channels over capacity in group 1
+2024-04-25 06:48:36,012 INFO core 6840 123135020705344 1 of 5 channels over capacity in group 1
+2024-04-25 06:48:36,151 INFO core 6840 123135020705344 1 of 5 channels over capacity in group 1
+2024-04-25 06:48:36,155 INFO core 6840 123135020705344 1 of 5 channels over capacity in group 1
+2024-04-25 06:48:36,326 INFO core 6840 123135020705344 1 of 5 channels over capacity in group 1
+2024-04-25 06:48:36,333 INFO core 6840 123135020705344 1 of 5 channels over capacity in group 1
+2024-04-25 06:48:36,337 INFO core 6840 123135020705344 1 of 5 channels over capacity in group 1
+2024-04-25 06:48:36,421 INFO core 6840 123135020705344 1 of 5 channels over capacity in group 1
+2024-04-25 06:48:36,423 INFO core 6840 123135020705344 1 of 5 channels over capacity in group 1
+2024-04-25 06:48:36,504 INFO core 6840 123135020705344 1 of 5 channels over capacity in group 1
+2024-04-25 06:48:36,542 INFO core 6840 123135020705344 1 of 5 channels over capacity in group 1
+2024-04-25 06:48:56,737 INFO runserver 6840 123135020705344 [mHTTP GET /communication/2/created/ 200 [0.01, 127.0.0.1:47858][0m
+2024-04-25 06:48:57,054 INFO runserver 6840 123135020705344 WebSocket DISCONNECT /ws/ [127.0.0.1:58410]
+2024-04-25 06:48:57,219 INFO runserver 6840 123135020705344 WebSocket HANDSHAKING /ws/ [127.0.0.1:47872]
+2024-04-25 06:48:57,221 INFO runserver 6840 123135020705344 WebSocket CONNECT /ws/ [127.0.0.1:47872]
+2024-04-25 06:48:57,696 WARNING log 6840 123134995854912 Not Found: /favicon.ico
+2024-04-25 06:48:57,696 WARNING runserver 6840 123135020705344 [33mHTTP GET /favicon.ico 404 [0.01, 127.0.0.1:47858][0m
+2024-04-25 06:49:08,761 INFO runserver 6840 123135020705344 [mHTTP GET /communication/2/join/ 200 [0.02, 127.0.0.1:51344][0m
+2024-04-25 06:49:09,215 INFO runserver 6840 123135020705344 WebSocket DISCONNECT /ws/ [127.0.0.1:34812]
+2024-04-25 06:49:09,515 INFO runserver 6840 123135020705344 WebSocket HANDSHAKING /ws/ [127.0.0.1:37304]
+2024-04-25 06:49:09,519 INFO runserver 6840 123135020705344 WebSocket CONNECT /ws/ [127.0.0.1:37304]
+2024-04-25 06:49:22,502 INFO runserver 6840 123135020705344 [mHTTP GET /communication/2/join/ 200 [0.02, 127.0.0.1:51344][0m
+2024-04-25 06:49:22,748 INFO runserver 6840 123135020705344 WebSocket DISCONNECT /ws/ [127.0.0.1:37304]
+2024-04-25 06:49:23,183 INFO runserver 6840 123135020705344 WebSocket HANDSHAKING /ws/ [127.0.0.1:48384]
+2024-04-25 06:49:23,187 INFO runserver 6840 123135020705344 WebSocket CONNECT /ws/ [127.0.0.1:48384]
+2024-04-25 06:49:26,631 INFO runserver 6840 123135020705344 [mHTTP GET /communication/2/created/ 200 [0.01, 127.0.0.1:47858][0m
+2024-04-25 06:49:26,818 INFO runserver 6840 123135020705344 WebSocket DISCONNECT /ws/ [127.0.0.1:47872]
+2024-04-25 06:49:27,143 INFO runserver 6840 123135020705344 WebSocket HANDSHAKING /ws/ [127.0.0.1:48400]
+2024-04-25 06:49:27,144 INFO runserver 6840 123135020705344 WebSocket CONNECT /ws/ [127.0.0.1:48400]
+2024-04-25 06:49:27,668 WARNING log 6840 123134995854912 Not Found: /favicon.ico
+2024-04-25 06:49:27,669 WARNING runserver 6840 123135020705344 [33mHTTP GET /favicon.ico 404 [0.04, 127.0.0.1:47858][0m
+2024-04-25 06:49:32,371 INFO runserver 6840 123135020705344 [mHTTP GET /communication/2/join/ 200 [0.02, 127.0.0.1:51344][0m
+2024-04-25 06:49:32,665 INFO runserver 6840 123135020705344 WebSocket DISCONNECT /ws/ [127.0.0.1:48384]
+2024-04-25 06:49:32,918 INFO runserver 6840 123135020705344 WebSocket HANDSHAKING /ws/ [127.0.0.1:42756]
+2024-04-25 06:49:32,920 INFO runserver 6840 123135020705344 WebSocket CONNECT /ws/ [127.0.0.1:42756]
+2024-04-25 06:50:12,280 INFO runserver 6840 123135020705344 [mHTTP GET /communication/2/created/ 200 [0.02, 127.0.0.1:34006][0m
+2024-04-25 06:50:55,473 INFO runserver 6840 123135020705344 [mHTTP GET /communication/2/join/ 200 [0.02, 127.0.0.1:56982][0m
+2024-04-25 06:50:56,468 WARNING log 6840 123134995854912 Not Found: /favicon.ico
+2024-04-25 06:50:56,469 WARNING runserver 6840 123135020705344 [33mHTTP GET /favicon.ico 404 [0.02, 127.0.0.1:56982][0m
+2024-04-25 06:50:56,526 INFO runserver 6840 123135020705344 WebSocket HANDSHAKING /ws/ [127.0.0.1:56994]
+2024-04-25 06:50:56,527 INFO runserver 6840 123135020705344 WebSocket CONNECT /ws/ [127.0.0.1:56994]
+2024-04-25 06:52:42,415 INFO runserver 6840 123135020705344 [mHTTP GET /communication/2/created/ 200 [0.02, 127.0.0.1:60680][0m
+2024-04-25 06:52:42,582 INFO runserver 6840 123135020705344 WebSocket DISCONNECT /ws/ [127.0.0.1:48400]
+2024-04-25 06:52:42,931 INFO runserver 6840 123135020705344 WebSocket HANDSHAKING /ws/ [127.0.0.1:60690]
+2024-04-25 06:52:42,933 INFO runserver 6840 123135020705344 WebSocket CONNECT /ws/ [127.0.0.1:60690]
+2024-04-25 06:52:43,304 WARNING log 6840 123134995854912 Not Found: /favicon.ico
+2024-04-25 06:52:43,305 WARNING runserver 6840 123135020705344 [33mHTTP GET /favicon.ico 404 [0.02, 127.0.0.1:60680][0m
+2024-04-25 06:52:52,158 INFO runserver 6840 123135020705344 [mHTTP GET /communication/2/join/ 200 [0.02, 127.0.0.1:40810][0m
+2024-04-25 06:52:52,419 INFO runserver 6840 123135020705344 WebSocket DISCONNECT /ws/ [127.0.0.1:42756]
+2024-04-25 06:52:52,979 INFO runserver 6840 123135020705344 WebSocket HANDSHAKING /ws/ [127.0.0.1:40824]
+2024-04-25 06:52:52,984 INFO runserver 6840 123135020705344 WebSocket CONNECT /ws/ [127.0.0.1:40824]
+2024-04-25 06:54:00,941 INFO runserver 6840 123135020705344 WebSocket DISCONNECT /ws/ [127.0.0.1:56994]
+2024-04-25 06:54:09,601 INFO runserver 6840 123135020705344 [mHTTP GET /communication/2/created/ 200 [0.01, 127.0.0.1:49412][0m
+2024-04-25 06:54:09,916 INFO runserver 6840 123135020705344 WebSocket DISCONNECT /ws/ [127.0.0.1:60690]
+2024-04-25 06:54:10,135 INFO runserver 6840 123135020705344 WebSocket HANDSHAKING /ws/ [127.0.0.1:49418]
+2024-04-25 06:54:10,137 INFO runserver 6840 123135020705344 WebSocket CONNECT /ws/ [127.0.0.1:49418]
+2024-04-25 06:54:10,557 WARNING log 6840 123134995854912 Not Found: /favicon.ico
+2024-04-25 06:54:10,559 WARNING runserver 6840 123135020705344 [33mHTTP GET /favicon.ico 404 [0.04, 127.0.0.1:49412][0m
+2024-04-25 06:55:16,454 INFO runserver 6840 123135020705344 [mHTTP GET /communication/2/join/ 200 [0.02, 127.0.0.1:49410][0m
+2024-04-25 06:55:29,794 INFO runserver 6840 123135020705344 [mHTTP GET /communication/2/join/ 200 [0.02, 127.0.0.1:44914][0m
+2024-04-25 06:55:30,509 WARNING log 6840 123134995854912 Not Found: /favicon.ico
+2024-04-25 06:55:30,511 WARNING runserver 6840 123135020705344 [33mHTTP GET /favicon.ico 404 [0.04, 127.0.0.1:44914][0m
+2024-04-25 06:55:30,576 INFO runserver 6840 123135020705344 WebSocket HANDSHAKING /ws/ [127.0.0.1:44920]
+2024-04-25 06:55:30,585 INFO runserver 6840 123135020705344 WebSocket CONNECT /ws/ [127.0.0.1:44920]
+2024-04-25 06:57:57,133 INFO runserver 6840 123135020705344 [mHTTP GET /communication/1/join/ 200 [0.01, 127.0.0.1:35578][0m
+2024-04-25 06:57:58,464 WARNING log 6840 123134995854912 Not Found: /favicon.ico
+2024-04-25 06:57:58,465 WARNING runserver 6840 123135020705344 [33mHTTP GET /favicon.ico 404 [0.01, 127.0.0.1:35578][0m
+2024-04-25 06:57:58,508 INFO runserver 6840 123135020705344 WebSocket HANDSHAKING /ws/ [127.0.0.1:35588]
+2024-04-25 06:57:58,510 INFO runserver 6840 123135020705344 WebSocket CONNECT /ws/ [127.0.0.1:35588]
+2024-04-25 06:58:33,517 INFO runserver 6840 123135020705344 WebSocket DISCONNECT /ws/ [127.0.0.1:35588]
+2024-04-25 06:59:19,481 INFO runserver 6840 123135020705344 [mHTTP GET /communication/2/created/ 200 [0.01, 127.0.0.1:42116][0m
+2024-04-25 06:59:19,669 INFO runserver 6840 123135020705344 WebSocket DISCONNECT /ws/ [127.0.0.1:49418]
+2024-04-25 06:59:19,887 INFO runserver 6840 123135020705344 WebSocket HANDSHAKING /ws/ [127.0.0.1:42120]
+2024-04-25 06:59:19,893 INFO runserver 6840 123135020705344 WebSocket CONNECT /ws/ [127.0.0.1:42120]
+2024-04-25 06:59:20,299 WARNING log 6840 123134995854912 Not Found: /favicon.ico
+2024-04-25 06:59:20,302 WARNING runserver 6840 123135020705344 [33mHTTP GET /favicon.ico 404 [0.04, 127.0.0.1:42116][0m
+2024-04-25 06:59:55,050 INFO runserver 6840 123135020705344 [mHTTP GET /communication/1/join/ 200 [0.02, 127.0.0.1:38166][0m
+2024-04-25 06:59:55,894 WARNING log 6840 123134995854912 Not Found: /favicon.ico
+2024-04-25 06:59:55,895 WARNING runserver 6840 123135020705344 [33mHTTP GET /favicon.ico 404 [0.01, 127.0.0.1:38166][0m
+2024-04-25 06:59:55,961 INFO runserver 6840 123135020705344 WebSocket HANDSHAKING /ws/ [127.0.0.1:38174]
+2024-04-25 06:59:55,964 INFO runserver 6840 123135020705344 WebSocket CONNECT /ws/ [127.0.0.1:38174]
+2024-04-25 06:59:57,003 INFO runserver 6840 123135020705344 WebSocket DISCONNECT /ws/ [127.0.0.1:44920]
+2024-04-25 06:59:59,631 WARNING log 6840 123134995854912 Not Found: /favicon.ico
+2024-04-25 06:59:59,632 WARNING runserver 6840 123135020705344 [33mHTTP GET /favicon.ico 404 [0.03, 127.0.0.1:38166][0m
+2024-04-25 07:00:05,324 INFO runserver 6840 123135020705344 [mHTTP GET /communication/2/join/ 200 [0.02, 127.0.0.1:42464][0m
+2024-04-25 07:00:05,797 INFO runserver 6840 123135020705344 WebSocket HANDSHAKING /ws/ [127.0.0.1:42466]
+2024-04-25 07:00:05,802 INFO runserver 6840 123135020705344 WebSocket CONNECT /ws/ [127.0.0.1:42466]
+2024-04-25 07:00:08,835 INFO runserver 6840 123135020705344 WebSocket DISCONNECT /ws/ [127.0.0.1:38174]
+2024-04-25 07:00:09,679 INFO runserver 6840 123135020705344 [mHTTP GET /communication/2/created/ 200 [0.01, 127.0.0.1:42116][0m
+2024-04-25 07:00:09,805 INFO runserver 6840 123135020705344 WebSocket DISCONNECT /ws/ [127.0.0.1:42120]
+2024-04-25 07:00:10,013 INFO runserver 6840 123135020705344 WebSocket HANDSHAKING /ws/ [127.0.0.1:42474]
+2024-04-25 07:00:10,014 INFO runserver 6840 123135020705344 WebSocket CONNECT /ws/ [127.0.0.1:42474]
+2024-04-25 07:00:10,399 WARNING log 6840 123134995854912 Not Found: /favicon.ico
+2024-04-25 07:00:10,400 WARNING runserver 6840 123135020705344 [33mHTTP GET /favicon.ico 404 [0.01, 127.0.0.1:42116][0m
+2024-04-25 07:00:41,279 INFO runserver 6840 123135020705344 WebSocket DISCONNECT /ws/ [127.0.0.1:40824]
+2024-04-25 07:00:43,264 INFO runserver 6840 123135020705344 [mHTTP GET /communication/2/join/ 200 [0.02, 127.0.0.1:49132][0m
+2024-04-25 07:00:44,584 INFO runserver 6840 123135020705344 WebSocket HANDSHAKING /ws/ [127.0.0.1:49134]
+2024-04-25 07:00:44,588 INFO runserver 6840 123135020705344 WebSocket CONNECT /ws/ [127.0.0.1:49134]
+2024-04-25 07:00:49,881 INFO runserver 6840 123135020705344 [mHTTP GET /communication/2/join/ 200 [0.02, 127.0.0.1:49132][0m
+2024-04-25 07:00:50,090 INFO runserver 6840 123135020705344 WebSocket DISCONNECT /ws/ [127.0.0.1:49134]
+2024-04-25 07:00:50,365 INFO runserver 6840 123135020705344 WebSocket HANDSHAKING /ws/ [127.0.0.1:49136]
+2024-04-25 07:00:50,370 INFO runserver 6840 123135020705344 WebSocket CONNECT /ws/ [127.0.0.1:49136]
+2024-04-25 07:01:12,720 INFO runserver 6840 123135020705344 [mHTTP GET /communication/1/join/ 200 [0.01, 127.0.0.1:44404][0m
+2024-04-25 07:01:14,077 INFO runserver 6840 123135020705344 WebSocket HANDSHAKING /ws/ [127.0.0.1:44416]
+2024-04-25 07:01:14,082 INFO runserver 6840 123135020705344 WebSocket CONNECT /ws/ [127.0.0.1:44416]
+2024-04-25 07:01:17,853 INFO runserver 6840 123135020705344 WebSocket DISCONNECT /ws/ [127.0.0.1:42466]
