@@ -16,7 +16,8 @@ COPY ./requirements.txt /app/requirements.txt
 # Install system dependencies
 RUN apt-get update
 RUN pip install --upgrade pip setuptools wheel
-RUN pip install -r requirements.txt
+RUN pip install daphne
+RUN pip install -r requirment2.txt
 RUN python manage.py collectstatic --noinput
 # Run the application
 CMD ["daphne", "-b", "0.0.0.0", "-p", "8000", "LiveStreaming.asgi:application"]
