@@ -37,8 +37,8 @@
         // make IscServer
         let iceServers = {
             iceServers:[
-                { urls: "stun:47.128.255.248:3478" },
-                { urls: "turn:47.128.255.248:3478", username: "dkkundu", credential: "dkpass" },
+                { urls: "stun:18.141.232.155:3478" },
+                { urls: "turn:18.141.232.155:3478", username: "dkkundu", credential: "dkpass" }
             ],
         };
 
@@ -51,7 +51,7 @@
      const room_id = "{{ room_id }}";
      let is_created;
 
-     const ws = new WebSocket("wss://f2c0-2406-da18-71c-dd00-1703-9549-56f6-aa37.ngrok-free.app/ws/")
+     const ws = new WebSocket("wss://b360-103-35-108-18.ngrok-free.app/ws/")
      ws.onopen = () =>{
          console.log("WebSocket Connection opened")
           ws.send(JSON.stringify({
