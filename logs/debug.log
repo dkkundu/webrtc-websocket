@@ -1,50 +1,21 @@
-2024-04-27 04:04:31,839 INFO cli 13802 131741268885504 Starting server at tcp:port=5011:interface=0.0.0.0
-2024-04-27 04:04:31,840 INFO server 13802 131741268885504 HTTP/2 support not enabled (install the http2 and tls Twisted extras)
-2024-04-27 04:04:31,840 INFO server 13802 131741268885504 Configuring endpoint tcp:port=5011:interface=0.0.0.0
-2024-04-27 04:04:31,840 INFO server 13802 131741268885504 Listening on TCP address 0.0.0.0:5011
-2024-04-27 04:04:35,761 INFO server 13802 131741268885504 Killed 0 pending application instances
-2024-04-27 04:05:08,854 INFO cli 14214 124768159956992 Starting server at tcp:port=5011:interface=0.0.0.0
-2024-04-27 04:05:08,855 INFO server 14214 124768159956992 HTTP/2 support not enabled (install the http2 and tls Twisted extras)
-2024-04-27 04:05:08,855 INFO server 14214 124768159956992 Configuring endpoint tcp:port=5011:interface=0.0.0.0
-2024-04-27 04:05:08,855 INFO server 14214 124768159956992 Listening on TCP address 0.0.0.0:5011
-2024-04-27 04:05:36,454 WARNING log 14214 124768090375744 Not Found: /favicon.ico
-2024-04-27 04:05:39,533 WARNING log 14214 124768090375744 Not Found: /favicon.ico
-2024-04-27 04:05:54,640 WARNING log 14214 124768090375744 Not Found: /favicon.ico
-2024-04-27 04:05:59,077 WARNING log 14214 124768090375744 Not Found: /favicon.ico
-2024-04-27 04:08:41,555 WARNING log 14214 124768090375744 Not Found: /favicon.ico
-2024-04-27 04:09:10,386 WARNING log 14214 124768090375744 Not Found: /favicon.ico
-2024-04-27 04:12:51,550 WARNING log 14214 124768090375744 Not Found: /favicon.ico
-2024-04-27 04:21:57,009 WARNING log 14214 124768090375744 Not Found: /favicon.ico
-2024-04-27 04:31:33,993 WARNING log 14214 124768090375744 Not Found: /favicon.ico
-2024-04-27 04:32:30,366 WARNING log 14214 124768090375744 Not Found: /favicon.ico
-2024-04-27 04:41:49,816 WARNING log 14214 124768090375744 Not Found: /favicon.ico
-2024-04-27 05:08:17,643 WARNING log 14214 124768090375744 Not Found: /favicon.ico
-2024-04-27 12:33:53,094 INFO server 14214 124768159956992 Killed 0 pending application instances
-2024-04-27 12:33:54,375 INFO cli 136357 133170182238208 Starting server at tcp:port=5011:interface=0.0.0.0
-2024-04-27 12:33:54,375 INFO server 136357 133170182238208 HTTP/2 support not enabled (install the http2 and tls Twisted extras)
-2024-04-27 12:33:54,375 INFO server 136357 133170182238208 Configuring endpoint tcp:port=5011:interface=0.0.0.0
-2024-04-27 12:33:54,375 INFO server 136357 133170182238208 Listening on TCP address 0.0.0.0:5011
-2024-04-27 12:35:10,205 INFO server 136357 133170182238208 Killed 0 pending application instances
-2024-04-27 12:35:11,801 INFO cli 136798 127349917048832 Starting server at tcp:port=5011:interface=0.0.0.0
-2024-04-27 12:35:11,802 INFO server 136798 127349917048832 HTTP/2 support not enabled (install the http2 and tls Twisted extras)
-2024-04-27 12:35:11,802 INFO server 136798 127349917048832 Configuring endpoint tcp:port=5011:interface=0.0.0.0
-2024-04-27 12:35:11,802 INFO server 136798 127349917048832 Listening on TCP address 0.0.0.0:5011
-2024-04-27 12:36:17,999 INFO server 136798 127349917048832 Killed 0 pending application instances
-2024-04-27 12:36:18,992 INFO cli 137114 140585021063168 Starting server at tcp:port=5011:interface=0.0.0.0
-2024-04-27 12:36:18,992 INFO server 137114 140585021063168 HTTP/2 support not enabled (install the http2 and tls Twisted extras)
-2024-04-27 12:36:18,993 INFO server 137114 140585021063168 Configuring endpoint tcp:port=5011:interface=0.0.0.0
-2024-04-27 12:36:18,993 INFO server 137114 140585021063168 Listening on TCP address 0.0.0.0:5011
-2024-04-27 12:38:43,058 INFO server 137114 140585021063168 Killed 0 pending application instances
-2024-04-27 12:38:45,041 INFO cli 137991 135668378021888 Starting server at tcp:port=5011:interface=0.0.0.0
-2024-04-27 12:38:45,042 INFO server 137991 135668378021888 HTTP/2 support not enabled (install the http2 and tls Twisted extras)
-2024-04-27 12:38:45,042 INFO server 137991 135668378021888 Configuring endpoint tcp:port=5011:interface=0.0.0.0
-2024-04-27 12:38:45,042 INFO server 137991 135668378021888 Listening on TCP address 0.0.0.0:5011
-2024-04-27 12:41:28,125 INFO server 137991 135668378021888 Killed 0 pending application instances
-2024-04-27 12:41:29,313 INFO cli 138809 137766796333056 Starting server at tcp:port=5011:interface=0.0.0.0
-2024-04-27 12:41:29,314 INFO server 138809 137766796333056 HTTP/2 support not enabled (install the http2 and tls Twisted extras)
-2024-04-27 12:41:29,314 INFO server 138809 137766796333056 Configuring endpoint tcp:port=5011:interface=0.0.0.0
-2024-04-27 12:41:29,314 INFO server 138809 137766796333056 Listening on TCP address 0.0.0.0:5011
-2024-04-27 12:41:35,578 WARNING log 138809 137766646052416 Not Found: /favicon.ico
-2024-04-27 12:42:26,852 WARNING log 138809 137766646052416 Not Found: /favicon.ico
-2024-04-27 12:42:40,840 WARNING log 138809 137766646052416 Not Found: /favicon.ico
-2024-04-27 12:46:27,215 INFO server 138809 137766796333056 Killed 0 pending application instances
+2024-05-04 11:28:13,305 INFO autoreload 149594 123337223966720 Watching for file changes with StatReloader
+2024-05-04 11:28:38,765 WARNING log 149594 123337099441728 Not Found: /images
+2024-05-04 11:34:21,876 INFO cli 151100 127940784287744 Starting server at tcp:port=5011:interface=0.0.0.0
+2024-05-04 11:34:21,877 INFO server 151100 127940784287744 HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+2024-05-04 11:34:21,877 INFO server 151100 127940784287744 Configuring endpoint tcp:port=5011:interface=0.0.0.0
+2024-05-04 11:34:21,877 INFO server 151100 127940784287744 Listening on TCP address 0.0.0.0:5011
+2024-05-04 11:34:29,883 ERROR server 151100 127940784287744 Exception inside application: No route found for path 'images'.
+Traceback (most recent call last):
+  File "/media/dk/Backup/Office/RTSP/webrtc-websocket/dj/lib/python3.10/site-packages/channels/routing.py", line 62, in __call__
+    return await application(scope, receive, send)
+  File "/media/dk/Backup/Office/RTSP/webrtc-websocket/dj/lib/python3.10/site-packages/channels/sessions.py", line 47, in __call__
+    return await self.inner(dict(scope, cookies=cookies), receive, send)
+  File "/media/dk/Backup/Office/RTSP/webrtc-websocket/dj/lib/python3.10/site-packages/channels/sessions.py", line 263, in __call__
+    return await self.inner(wrapper.scope, receive, wrapper.send)
+  File "/media/dk/Backup/Office/RTSP/webrtc-websocket/dj/lib/python3.10/site-packages/channels/auth.py", line 185, in __call__
+    return await super().__call__(scope, receive, send)
+  File "/media/dk/Backup/Office/RTSP/webrtc-websocket/dj/lib/python3.10/site-packages/channels/middleware.py", line 24, in __call__
+    return await self.inner(scope, receive, send)
+  File "/media/dk/Backup/Office/RTSP/webrtc-websocket/dj/lib/python3.10/site-packages/channels/routing.py", line 150, in __call__
+    raise ValueError("No route found for path %r." % path)
+ValueError: No route found for path 'images'.
