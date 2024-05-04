@@ -33,53 +33,32 @@
         </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
-<script>
-    let iceServers = {
-       iceServers: [
-      {
-        urls: "stun:stun.relay.metered.ca:80",
-      },
-      {
-        urls: "turn:global.relay.metered.ca:80",
-        username: "9a6573ba1552123f12039894",
-        credential: "DTuw20rdqlffZVBY",
-      },
-      {
-        urls: "turn:global.relay.metered.ca:80?transport=tcp",
-        username: "9a6573ba1552123f12039894",
-        credential: "DTuw20rdqlffZVBY",
-      },
-      {
-        urls: "turn:global.relay.metered.ca:443",
-        username: "9a6573ba1552123f12039894",
-        credential: "DTuw20rdqlffZVBY",
-      },
-      {
-        urls: "turns:global.relay.metered.ca:443?transport=tcp",
-        username: "9a6573ba1552123f12039894",
-        credential: "DTuw20rdqlffZVBY",
-      },
-  ],
-    };
+    <script>
+        // make IscServer
+        let iceServers = {
+            iceServers:[
+                { urls: "stun:18.141.232.155:3478" },
+                { urls: "turn:18.141.232.155:3478", username: "dkkundu", credential: "dkpass" }
+            ],
+        };
 
+     const my_video = document.getElementById("my_video")
+     const pi_video = document.getElementById("pi_video")
 
-    const my_video = document.getElementById("my_video")
-    const pi_video = document.getElementById("pi_video")
+     let localStream;
+     let rtcpeerconnection;
+     const created = "{{ created }}";
+     const room_id = "{{ room_id }}";
+     let is_created;
 
-    let localStream;
-    let rtcpeerconnection;
-    const created = "{{ created }}";
-    const room_id = "{{ room_id }}";
-    let is_created;
-
-    const ws = new WebSocket("wss://b0e8-103-159-73-255.ngrok-free.app/ws/")
-    ws.onopen = () =>{
-        console.log("WebSocket Connection opened")
-        ws.send(JSON.stringify({
-            'command': 'join_room',
-            'room_id': room_id
-        }))
-        console.log("Add in channel")
+     const ws = new WebSocket("wss://b360-103-35-108-18.ngrok-free.app/ws/")
+     ws.onopen = () =>{
+         console.log("WebSocket Connection opened")
+          ws.send(JSON.stringify({
+              'command': 'join_room',
+              'room_id': room_id
+          }))
+         console.log("Add in channel")
 
         const constraints = {
             'video': true,
@@ -103,110 +82,117 @@
                 console.error('Error accessing media devices.', error);
             });
 
-        if (created == 'created'){
-            is_created = true
-        }
-        else {
-            is_created = false
-        }
-        console.log(is_created)
-        console.log("is_created-----------")
+         if (created == 'created'){
+             is_created = true
+         }
+         else {
+             is_created = false
+         }
+         console.log(is_created)
+         console.log("is_created-----------")
 
-    }
+     }
 
-    ws.onmessage = (e) =>{
-        const data = JSON.parse(e.data)
-        if (data["command"] == "join") {
-            console.log("check access log")
+
+     ws.onmessage = (e) =>{
+         const data = JSON.parse(e.data)
+       if (data["command"] == "join") {
+          console.log("check access log")
         } else if(data["command"] == "offer"){
-            if (is_created == false){
-                create_answer(data["offer"])
-            }
+             if (is_created == false){
+                 create_answer(data["offer"])
+             }
 
-        }else if (data["command"] == "answer"){
-            console.log("is_created true before loading")
+         }else if (data["command"] == "answer"){
+             console.log("is_created true before loading")
 
-            if (is_created == true){
-                rtcpeerconnection.setRemoteDescription(data["answer"])
-                console.log("answer set as Remote Description")
-            }
-        } else if (data["command"] == "candidate"){
+             if (is_created == true){
+                 rtcpeerconnection.setRemoteDescription(data["answer"])
+                 console.log("answer set as Remote Description")
+             }
+         } else if (data["command"] == "candidate"){
             console.log("loading candidate");
             if (data["iscreated"] != is_created){
                 const IceCandidate = new RTCIceCandidate(data['candidate']);
                 rtcpeerconnection.addIceCandidate(IceCandidate);
             }
         }
-        console.log(data)
-    }
+         console.log(data)
+     }
 
-    // here is all functions
-    function on_ice_candidate_func(e){
-        if (e.candidate){
-            ws.send(JSON.stringify({
-                'command': 'candidate',
-                'candidate': e.candidate,
-                'iscreated': is_created,
-                'room_id': room_id
-            }))
-        }
-    }
+     // here is all functions
+     function on_ice_candidate_func(e){
+         if (e.candidate){
+             ws.send(JSON.stringify({
+                 'command': 'candidate',
+                 'candidate': e.candidate,
+                 'iscreated': is_created,
+                 'room_id': room_id
+             }))
+         }
+     }
 
-    function on_track_func(e){
-        pi_video.srcObject = e.streams[0]
-        pi_video.onloadedmetadata = () => {
-            pi_video.play()
-        }
-    }
-    function create_offer(){
-        console.log("create_offer")
-        rtcpeerconnection = new RTCPeerConnection(iceServers)
-        rtcpeerconnection.onicecandidate = on_ice_candidate_func;
-        rtcpeerconnection.ontrack = on_track_func;
-        localStream.getTracks().forEach(track => {
+     function on_track_func(e){
+         pi_video.srcObject = e.streams[0]
+         pi_video.onloadedmetadata = () => {
+             pi_video.play()
+         }
+     }
+     function create_offer(){
+         console.log("create_offer")
+         rtcpeerconnection = new RTCPeerConnection(iceServers)
+         rtcpeerconnection.onicecandidate = on_ice_candidate_func;
+         rtcpeerconnection.ontrack = on_track_func;
+         localStream.getTracks().forEach(track => {
             rtcpeerconnection.addTrack(track, localStream);
         });
 
-        rtcpeerconnection.createOffer().then(offer =>{
-            rtcpeerconnection.setLocalDescription(offer)
-            ws.send(JSON.stringify({
-                'command': 'offer',
-                'offer': offer,
-                'room_id': room_id
-            }))
+         rtcpeerconnection.createOffer().then(offer =>{
+             rtcpeerconnection.setLocalDescription(offer)
+             ws.send(JSON.stringify({
+                 'command': 'offer',
+                 'offer': offer,
+                 'room_id': room_id
+             }))
 
-        })
+         })
 
-    }
+     }
 
-    function create_answer(offer){
-        console.log("create_offer")
-        rtcpeerconnection = new RTCPeerConnection(iceServers)
-        rtcpeerconnection.onicecandidate = on_ice_candidate_func;
-        rtcpeerconnection.ontrack = on_track_func;
-        localStream.getTracks().forEach(track => {
+     function create_answer(offer){
+         console.log("create_offer")
+         rtcpeerconnection = new RTCPeerConnection(iceServers)
+         rtcpeerconnection.onicecandidate = on_ice_candidate_func;
+         rtcpeerconnection.ontrack = on_track_func;
+         localStream.getTracks().forEach(track => {
             rtcpeerconnection.addTrack(track, localStream);
         });
 
-        rtcpeerconnection.setRemoteDescription(offer)
+         rtcpeerconnection.setRemoteDescription(offer)
 
-        rtcpeerconnection.createAnswer().then(answer =>{
-            rtcpeerconnection.setLocalDescription(answer)
-            ws.send(JSON.stringify({
-                'command': 'answer',
-                'answer': answer,
-                'room_id': room_id
-            }))
+         rtcpeerconnection.createAnswer().then(answer =>{
+             rtcpeerconnection.setLocalDescription(answer)
+             ws.send(JSON.stringify({
+                 'command': 'answer',
+                 'answer': answer,
+                 'room_id': room_id
+             }))
 
-        })
+         })
 
-    }
+     }
 
-    $("#call_btn").on( "click", function() {
-        create_offer();
+     $("#call_btn").on( "click", function() {
+         create_offer();
     });
 
-</script>
+
+
+
+
+
+  </script>
+
 
 
   </body>
