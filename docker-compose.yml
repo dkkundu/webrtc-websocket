@@ -13,6 +13,6 @@ services:
     volumes:
       - .:/app
     ports:
-      - "80:8000"
+      - "5011:8000"
     links:
       - redis
