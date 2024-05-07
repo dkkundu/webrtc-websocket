@@ -22,4 +22,5 @@ urlpatterns = [
     path('communication/<str:room_id>/', views.communication, name='join_communication'),
     path('communication/<str:room_id>/<str:created>/', views.communication, name='communication'),
 
+
 ]

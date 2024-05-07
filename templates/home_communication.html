@@ -51,7 +51,7 @@
      const room_id = "{{ room_id }}";
      let is_created;
 
-     const ws = new WebSocket("wss://b360-103-35-108-18.ngrok-free.app/ws/")
+     const ws = new WebSocket("wss://e36b-103-35-108-18.ngrok-free.app/ws/")
      ws.onopen = () =>{
          console.log("WebSocket Connection opened")
           ws.send(JSON.stringify({
@@ -84,9 +84,13 @@
 
          if (created == 'created'){
              is_created = true
+             document.getElementById("call_btn").style.display = "block";
+
          }
          else {
              is_created = false
+             document.getElementById("call_btn").style.display = "none";
+
          }
          console.log(is_created)
          console.log("is_created-----------")

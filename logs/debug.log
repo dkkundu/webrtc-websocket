@@ -1,26 +1,99 @@
-2024-04-29 04:50:09,271 INFO cli 102302 127722030325760 Starting server at tcp:port=8000:interface=0.0.0.0
-2024-04-29 04:50:09,272 INFO server 102302 127722030325760 HTTP/2 support not enabled (install the http2 and tls Twisted extras)
-2024-04-29 04:50:09,272 INFO server 102302 127722030325760 Configuring endpoint tcp:port=8000:interface=0.0.0.0
-2024-04-29 04:50:09,272 INFO server 102302 127722030325760 Listening on TCP address 0.0.0.0:8000
-2024-04-29 05:04:36,024 INFO server 102302 127722030325760 Killed 0 pending application instances
-2024-04-29 05:04:55,180 INFO cli 103867 136749097562112 Starting server at tcp:port=5011:interface=0.0.0.0
-2024-04-29 05:04:55,180 INFO server 103867 136749097562112 HTTP/2 support not enabled (install the http2 and tls Twisted extras)
-2024-04-29 05:04:55,180 INFO server 103867 136749097562112 Configuring endpoint tcp:port=5011:interface=0.0.0.0
-2024-04-29 05:04:55,181 INFO server 103867 136749097562112 Listening on TCP address 0.0.0.0:5011
-2024-04-29 05:05:05,740 WARNING log 103867 136749027624512 Not Found: /favicon.ico
-2024-04-29 05:05:43,184 WARNING log 103867 136749027624512 Not Found: /favicon.ico
-2024-04-29 05:07:01,565 WARNING log 103867 136749027624512 Not Found: /favicon.ico
-2024-04-29 05:07:43,055 WARNING log 103867 136749027624512 Not Found: /favicon.ico
-2024-04-29 05:14:18,730 WARNING log 103867 136749027624512 Not Found: /favicon.ico
-2024-04-29 05:52:40,844 WARNING log 103867 136749027624512 Not Found: /favicon.ico
-2024-04-29 06:13:45,065 WARNING log 103867 136749027624512 Not Found: /favicon.ico
-2024-04-29 06:14:17,047 WARNING log 103867 136749027624512 Not Found: /favicon.ico
-2024-04-29 06:26:13,308 INFO server 103867 136749097562112 Killed 1 pending application instances
-2024-04-29 06:26:15,711 INFO cli 111353 123399693459456 Starting server at tcp:port=5011:interface=0.0.0.0
-2024-04-29 06:26:15,711 INFO server 111353 123399693459456 HTTP/2 support not enabled (install the http2 and tls Twisted extras)
-2024-04-29 06:26:15,712 INFO server 111353 123399693459456 Configuring endpoint tcp:port=5011:interface=0.0.0.0
-2024-04-29 06:26:15,712 INFO server 111353 123399693459456 Listening on TCP address 0.0.0.0:5011
-2024-04-29 06:26:21,654 WARNING log 111353 123399615407680 Not Found: /favicon.ico
-2024-04-29 06:28:40,124 WARNING log 111353 123399615407680 Not Found: /favicon.ico
-2024-04-29 06:28:50,838 WARNING log 111353 123399615407680 Not Found: /favicon.ico
-2024-04-29 06:33:46,288 INFO server 111353 123399693459456 Killed 1 pending application instances
+2024-04-30 07:28:15,937 INFO cli 185379 130153132122112 Starting server at tcp:port=5011:interface=0.0.0.0
+2024-04-30 07:28:15,938 INFO server 185379 130153132122112 HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+2024-04-30 07:28:15,938 INFO server 185379 130153132122112 Configuring endpoint tcp:port=5011:interface=0.0.0.0
+2024-04-30 07:28:15,939 INFO server 185379 130153132122112 Listening on TCP address 0.0.0.0:5011
+2024-04-30 07:28:40,998 WARNING log 185379 130153068226112 Not Found: /favicon.ico
+2024-04-30 07:29:27,714 INFO server 185379 130153132122112 Killed 0 pending application instances
+2024-04-30 07:29:29,399 INFO cli 185793 126417549959168 Starting server at tcp:port=5011:interface=0.0.0.0
+2024-04-30 07:29:29,399 INFO server 185793 126417549959168 HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+2024-04-30 07:29:29,399 INFO server 185793 126417549959168 Configuring endpoint tcp:port=5011:interface=0.0.0.0
+2024-04-30 07:29:29,400 INFO server 185793 126417549959168 Listening on TCP address 0.0.0.0:5011
+2024-04-30 07:30:04,988 WARNING log 185793 126417484842560 Not Found: /favicon.ico
+2024-04-30 07:30:28,522 INFO server 185793 126417549959168 Killed 0 pending application instances
+2024-04-30 07:30:31,570 INFO cli 186022 138224438935552 Starting server at tcp:port=5011:interface=0.0.0.0
+2024-04-30 07:30:31,570 INFO server 186022 138224438935552 HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+2024-04-30 07:30:31,570 INFO server 186022 138224438935552 Configuring endpoint tcp:port=5011:interface=0.0.0.0
+2024-04-30 07:30:31,571 INFO server 186022 138224438935552 Listening on TCP address 0.0.0.0:5011
+2024-04-30 07:30:39,643 WARNING log 186022 138224366638656 Not Found: /favicon.ico
+2024-04-30 07:31:14,875 WARNING log 186022 138224366638656 Not Found: /favicon.ico
+2024-04-30 07:32:20,341 WARNING log 186022 138224366638656 Not Found: /favicon.ico
+2024-04-30 07:32:39,250 WARNING log 186022 138224366638656 Not Found: /favicon.ico
+2024-04-30 07:32:42,871 WARNING log 186022 138224366638656 Not Found: /favicon.ico
+2024-04-30 07:33:16,220 WARNING log 186022 138224366638656 Not Found: /favicon.ico
+2024-04-30 10:42:38,018 INFO cli 205861 129660328898560 Starting server at tcp:port=5011:interface=0.0.0.0
+2024-04-30 10:42:38,019 INFO server 205861 129660328898560 HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+2024-04-30 10:42:38,019 INFO server 205861 129660328898560 Configuring endpoint tcp:port=5011:interface=0.0.0.0
+2024-04-30 10:42:38,020 INFO server 205861 129660328898560 Listening on TCP address 0.0.0.0:5011
+2024-04-30 10:42:51,719 ERROR log 205861 129660264842816 Internal Server Error: /communication/2/created/
+Traceback (most recent call last):
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/asgiref/sync.py", line 518, in thread_handler
+    raise exc_info[1]
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/core/handlers/exception.py", line 42, in inner
+    response = await get_response(request)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/core/handlers/base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/asgiref/sync.py", line 468, in __call__
+    ret = await asyncio.shield(exec_coro)
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/asgiref/sync.py", line 522, in thread_handler
+    return func(*args, **kwargs)
+TypeError: communication() missing 1 required positional argument: 'created'
+2024-04-30 10:42:53,648 ERROR log 205861 129660264842816 Internal Server Error: /communication/2/created/
+Traceback (most recent call last):
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/asgiref/sync.py", line 518, in thread_handler
+    raise exc_info[1]
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/core/handlers/exception.py", line 42, in inner
+    response = await get_response(request)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/core/handlers/base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/asgiref/sync.py", line 468, in __call__
+    ret = await asyncio.shield(exec_coro)
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/asgiref/sync.py", line 522, in thread_handler
+    return func(*args, **kwargs)
+TypeError: communication() missing 1 required positional argument: 'created'
+2024-04-30 10:43:59,222 ERROR log 205861 129660264842816 Internal Server Error: /communication/2/created/
+Traceback (most recent call last):
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/asgiref/sync.py", line 518, in thread_handler
+    raise exc_info[1]
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/core/handlers/exception.py", line 42, in inner
+    response = await get_response(request)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/django/core/handlers/base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/asgiref/sync.py", line 468, in __call__
+    ret = await asyncio.shield(exec_coro)
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/media/dipto/backup_dk/office/backend/easy-secyrity-live-streaming/dj/lib/python3.10/site-packages/asgiref/sync.py", line 522, in thread_handler
+    return func(*args, **kwargs)
+TypeError: communication() missing 1 required positional argument: 'created'
+2024-04-30 10:44:07,939 INFO server 205861 129660328898560 Killed 0 pending application instances
+2024-04-30 10:44:10,050 INFO cli 206272 126858029297664 Starting server at tcp:port=5011:interface=0.0.0.0
+2024-04-30 10:44:10,050 INFO server 206272 126858029297664 HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+2024-04-30 10:44:10,051 INFO server 206272 126858029297664 Configuring endpoint tcp:port=5011:interface=0.0.0.0
+2024-04-30 10:44:10,051 INFO server 206272 126858029297664 Listening on TCP address 0.0.0.0:5011
+2024-04-30 11:23:26,809 WARNING log 206272 126857965405760 Not Found: /favicon.ico
+2024-04-30 11:24:02,301 INFO server 206272 126858029297664 Killed 0 pending application instances
+2024-04-30 11:24:03,883 INFO cli 209028 138451595816960 Starting server at tcp:port=5011:interface=0.0.0.0
+2024-04-30 11:24:03,883 INFO server 209028 138451595816960 HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+2024-04-30 11:24:03,883 INFO server 209028 138451595816960 Configuring endpoint tcp:port=5011:interface=0.0.0.0
+2024-04-30 11:24:03,884 INFO server 209028 138451595816960 Listening on TCP address 0.0.0.0:5011
+2024-04-30 11:24:10,204 WARNING log 209028 138451523462720 Not Found: /favicon.ico
+2024-04-30 11:24:42,412 INFO server 209028 138451595816960 Killed 1 pending application instances
+2024-04-30 11:24:43,863 INFO cli 209137 138957093965824 Starting server at tcp:port=5011:interface=0.0.0.0
+2024-04-30 11:24:43,864 INFO server 209137 138957093965824 HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+2024-04-30 11:24:43,864 INFO server 209137 138957093965824 Configuring endpoint tcp:port=5011:interface=0.0.0.0
+2024-04-30 11:24:43,865 INFO server 209137 138957093965824 Listening on TCP address 0.0.0.0:5011
+2024-04-30 11:24:48,482 WARNING log 209137 138956947580480 Not Found: /favicon.ico
+2024-04-30 11:25:08,176 WARNING log 209137 138956947580480 Not Found: /favicon.ico
+2024-04-30 11:25:40,980 WARNING log 209137 138956947580480 Not Found: /favicon.ico
+2024-04-30 11:43:20,854 WARNING log 209137 138956947580480 Not Found: /favicon.ico
+2024-04-30 11:43:44,836 WARNING log 209137 138956947580480 Not Found: /favicon.ico
+2024-04-30 11:44:49,687 WARNING log 209137 138956947580480 Not Found: /favicon.ico
+2024-04-30 11:46:03,491 WARNING log 209137 138956947580480 Not Found: /communication/1/join/favicon.ico
+2024-04-30 11:46:08,157 WARNING log 209137 138956947580480 Not Found: /favicon.ico
+2024-04-30 11:47:15,413 WARNING log 209137 138956947580480 Not Found: /favicon.ico
+2024-04-30 11:47:17,681 WARNING log 209137 138956947580480 Not Found: /favicon.ico
+2024-04-30 11:47:42,923 WARNING log 209137 138956947580480 Not Found: /favicon.ico
