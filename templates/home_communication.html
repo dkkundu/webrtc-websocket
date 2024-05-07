@@ -51,7 +51,11 @@
      const room_id = "{{ room_id }}";
      let is_created;
 
+<<<<<<< HEAD
      const ws = new WebSocket("wss://e36b-103-35-108-18.ngrok-free.app/ws/")
+=======
+     const ws = new WebSocket("wss://mfr-live-test2.sslwireless.com/ws/")
+>>>>>>> 3f9e2d9736c3af6471935e552501c5f9672a5209
      ws.onopen = () =>{
          console.log("WebSocket Connection opened")
           ws.send(JSON.stringify({
